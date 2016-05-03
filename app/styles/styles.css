@@ -1,0 +1,42 @@
+/* Main styles */
+	*{font-family: 'Open Sans', sans-serif;}
+
+/* Header */
+	.navbar{border-radius: 0px; }
+	.navbar-brand{
+		width: 175px; 
+		height: 45px; 
+		padding: 0px; 
+		background-size: cover; 
+		background-image: url(../images/brand.png);
+		background-position: center;
+	}
+
+/* Breadcrumb */
+	.breadcrumb-container {background-color: rgba(0, 0, 0, 0.75);} 
+	.breadcrumb {background-color: transparent; margin: 0px; border-radius: 0px;}
+
+/* Jumbotron */
+.jumbotron, .jumbotron-w-image{
+	background-color: rgb(20, 20, 20); 
+	border-radius: 0px; 
+	background-attachment: fixed;
+	background-position: center; 
+	background-size: cover;
+}
+	.jumbotron-w-image .jumbotron{
+		border-radius: 0px; 
+		background-color: rgba(0, 0, 0, 0.5);
+		background-attachment: fixed;
+		background-position: center; 
+		background-size: cover;
+	}
+	.jumbotron .alert-warning{opacity: 0.75; transition: 0.5s;}
+	.jumbotron .alert-warning:hover{opacity: 1;}
+
+/* Feedback links */
+	#feedback a.list-group-item h4{color: #FFF}
+	#feedback a.list-group-item{color: #FFF; opacity: 0.5; transition: 0.5s;}
+	#feedback a.list-group-item:hover, #feedback a.list-group-item:active, #feedback a.list-group-item:focus{
+		opacity: 1; background-color: transparent;
+	}

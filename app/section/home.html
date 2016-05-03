@@ -1,0 +1,123 @@
+<dom-module id="app-home">
+	<template>
+		<div class="jumbotron-w-image bg-inverse" style="background-image: url(../images/jumbotron/home.jpg);">
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><a href="../../..">Home</a></li>
+						<li><a href="../..">Portfolio</a></li>
+						<li class="active">Flota Ferroviaria</li>
+					</ol>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1>Flota ferroviaria</h1>
+					<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
+					<p>Estos datos fueron recolectados por mí, tanto en persona como por los datos de varios videos en YouTube (los cuales ya les doy las gracias), y están disponibles para el uso libre para la comunidad. </p>
+					<div class="alert alert-warning alert-dismissible fade in" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<p><strong>Aviso: </strong>Los datos de las líneas metropolitanas se cargarán con más lentitud dado a que conlleva tiempo relevar dichas líneas, en especial el Tren de la Costa... imaginate que me queda un poquito lejos y encima tengo que ir a la facu. Por eso. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<iron-ajax
+				auto
+				url="../data/railways.json"
+				handle-as="json"
+				last-response="{{ajaxResponse}}"></iron-ajax>
+			<h1>Subterráneo de Buenos Aires + Premetro</h1>
+			<div class="row text-sm-center" id="subway-lines">
+				<template is="dom-repeat" items="[[ajaxResponse]]">
+					<template is="dom-if" if="{{type(item.type)}}">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+							<div class="card bg-inverse">
+								<div class="card-header bg-inverse"><h2>{{item.hometitle}}</h2></div>
+								<div class="card-block">
+									<p>{{item.homedescription}}</p>
+									<template is="dom-if" if="{{item.available}}">
+										<template is="dom-if" if="{{item.provisory}}">
+											<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-warning">Ver la flota provisoria</a>
+										</template>
+										<template is="dom-if" if="{{!item.provisory}}">
+											<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-primary">Ver la flota</a>
+										</template>
+									</template>
+									<template is="dom-if" if="{{!item.available}}">
+										<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-primary disabled">Proximamente</a>
+									</template>
+								</div>
+							</div>
+						</div>
+					</template>
+				</template>
+			</div>
+			<hr>
+			<h1>Ferrocarriles metropolitanos</h1>
+			<div class="row text-sm-center" id="railway-lines">
+				<template is="dom-repeat" items="[[ajaxResponse]]">
+					<template is="dom-if" if="{{!type(item.type)}}">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-xl-3">
+							<div class="card bg-inverse">
+								<div class="card-header bg-inverse"><h2>{{item.hometitle}}</h2></div>
+								<div class="card-block">
+									<p>{{item.homedescription}}</p>
+									<template is="dom-if" if="{{item.available}}">
+										<template is="dom-if" if="{{item.provisory}}">
+											<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-warning" title="Aún no se terminó de relevar por completo" data-toggle="tooltip" data-placement="top">Ver la flota parcial</a>
+										</template>
+										<template is="dom-if" if="{{!item.provisory}}">
+											<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-primary">Ver la flota</a>
+										</template>
+									</template>
+									<template is="dom-if" if="{{!item.available}}">
+										<a data-route="data" href$="{{baseUrl}}linea/{{item.line}}" class="btn btn-primary disabled">Proximamente</a>
+									</template>
+								</div>
+							</div>
+						</div>
+					</template>
+				</template>
+			</div>
+		</div>
+	</template>
+	<script>
+		//var blocks = [subway = '', railway = '']; 
+	  	
+		//$('#subway-lines').html(blocks.subway); 
+		//$('#railway-lines').html(blocks.railway); 
+
+		// $(".card .card-block a").click(function(ev) {
+		// 	ev.preventDefault();
+		// 	var href = $(this).attr('href').substring(1); 
+		// 	var hrefData = href.split(':'); 
+		// 	fileToHandle = hrefData[1]; 
+		// 	section('data'); 
+		// 	return false; 
+		// });	
+		// $(function () {$('[data-toggle="tooltip"]').tooltip()})
+
+		Polymer({
+			is: "app-home", 
+			properties: {
+				subwayLines: {
+					type: String
+				},
+				railwayLines: {
+					type: String
+				}
+			}, 
+			type: function (data) {
+				if (data === "subway") {
+					return true;
+				} else if (data === "railway") {
+					return false; 
+				}
+			}
+		});
+	</script>
+</dom-module>
