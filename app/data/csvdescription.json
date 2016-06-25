@@ -1,9 +1,0 @@
-{
-	"context": "context.json",
-	"dialect": {
-		"delimiter": ",",
-		"terminator": "\n",
-		"enclosure": "\""
-	},
-	"header": true
-}

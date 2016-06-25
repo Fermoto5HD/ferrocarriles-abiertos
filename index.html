@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="flota-ferroviaria">
+	<head>
+		<title>Flota Ferroviaria</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<link rel=manifest href="manifest.json">
+		<!-- Chrome for Android theme color -->
+		<meta name="theme-color" content="#282828" />
+		<!-- Tile color for Win8 -->
+		<meta name="msapplication-TileColor" content="#282828">
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="no">
+		<meta name="application-name" content="Fermoto5HD">
+		<link rel="icon" sizes="192x192" href="vendor/fm5strap/img/touch/chrome-touch-icon-192x192.png">
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Fermoto5HD">
+		<link rel="apple-touch-icon" href="vendor/fm5strap/img/touch/apple-touch-icon.png">
+		<!-- Tile icon for Win8 (144x144) -->
+		<meta name="msapplication-TileImage" content="vendor/fm5strap/img/touch/ms-touch-icon-144x144-precomposed.png">
+
+		<meta name="description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
+		<meta name="keywords" content="Fernando Osorio Fermoto5HD sitio personal portfolio" />
+		<meta name="author" content="Fernando Osorio (Fermoto5HD)" />
+		<meta name="thumbnail" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<!-- Meta og -->
+		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
+		<meta property="og:site_name" content="Sitio personal de Fermoto5HD" />
+		<meta property="og:title" content="Sitio personal de Fermoto5HD" />
+		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
+		<meta property="og:locale" content="es_AR" />
+		<meta property="og:url" content="http://Fermoto5HD.16mb.com/" />
+		<meta property="og:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta property="og:type" content="website" />
+		<!-- Meta Twitter -->
+		<meta name="twitter:title" content="Sitio personal de Fermoto5HD" />
+		<meta name="twitter:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
+		<meta name="twitter:card" content="photo" />
+		<meta name="twitter:site" content="@Fermoto5HD" />
+		<meta name="twitter:creator" content="@Fermoto5HD" />
+		<meta name="twitter:url" content="http://Fermoto5HD.16mb.com/" />
+		<meta name="twitter:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta name="twitter:image:width" content="435" />
+		<meta name="twitter:image:height" content="290" />
+		<!-- Assets and vendors -->
+		<link href="vendor/fm5strap/css/fm5strap.min.css" rel="stylesheet">
+		<link href="css/flota-ferroviaria.css" rel="stylesheet">
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gidole-regular" type="text/css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-fixed-top">
+				<div class="container">
+					<a class="navbar-brand" href="#/" title="Fernando Javier Osorio Lorenzo"></a>
+					<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
+					<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm" id="responsivemenu">
+						<li class="nav-item">
+							<a class="nav-link" href="#/">Inicio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#/">Subterráneo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#/">Ferrocarriles</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" nohref data-toggle="modal" data-target="#md-schemas">Esquemas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" nohref data-toggle="modal" data-target="#md-about">Acerca de</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<main class="content-w-fixed-navbar" ng-view></main>
+		<footer>
+			<div class="container">
+				<div class="col-md-6">
+					<h4>Sobre el sitio</h4>
+					<p>Licenciado bajo Creative Commons Atribución Internacional 4.0 (CC-BY-4.0)</p>
+					<h4>Recursos utilizados</h4>
+					<ul>
+						<li>FM5strap</li>
+						<li>Angular</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h4>Seguí el progreso del proyecto</h4>
+					<p>Visitá el repositorio del proyecto en GitHub:</p>
+					<a class="btn btn-primary" href="http://github.com/Fermoto5HD/flota-ferroviaria" target="_blank">Ir al repositorio</a>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="vendor/jquery/js/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/angular/js/angular.min.js"></script>
+		<script type="text/javascript" src="vendor/angular-route/js/angular-route.min.js"></script>
+		<script type="text/javascript" src="vendor/tether/js/tether.min.js"></script>
+		<script type="text/javascript" src="vendor/fm5strap/js/fm5strap.min.js"></script>
+		<script type="text/javascript" src="js/scripts-angu.js"></script>
+	</body>
+</html>

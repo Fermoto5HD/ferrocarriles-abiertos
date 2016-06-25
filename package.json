@@ -1,38 +1,31 @@
 {
-  "private": true,
-  "devDependencies": {
-    "browser-sync": "^2.7.7",
-    "connect-history-api-fallback": "^1.1.0",
-    "del": "^2.0.2",
-    "glob-all": "^3.0.1",
-    "gulp": "^3.8.5",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.0",
-    "gulp-changed": "^1.0.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-html-extract": "^0.1.0",
-    "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-main-bower-files": "^1.5.0",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-minify-html": "^1.0.2",
-    "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.5.4",
-    "gulp-size": "^2.0.0",
-    "gulp-uglify": "^1.2.0",
-    "gulp-useref": "^2.1.0",
-    "gulp-vulcanize": "^6.0.0",
-    "merge-stream": "^1.0.0",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.0.2",
-    "vulcanize": ">= 1.4.2"
-  },
+  "name": "flota-ferroviaria",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "gulp test:local",
-    "start": "gulp serve"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fermoto5HD/flota-ferroviaria.git"
+  },
+  "keywords": [
+    "flota",
+    "ferroviaria",
+    "ferrocarril",
+    "Buenos",
+    "Aires",
+    "AMBA"
+  ],
+  "author": "Fernando Osorio (Fermoto5HD@outlook.com)",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/Fermoto5HD/flota-ferroviaria/issues"
+  },
+  "homepage": "https://github.com/Fermoto5HD/flota-ferroviaria#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-task": "^0.4.0"
   }
 }
