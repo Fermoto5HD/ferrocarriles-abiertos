@@ -1,0 +1,29 @@
+Formación,Serie,Composición,1,2,3,4,5,6,Esquema,¿Reparado?,¿AA?
+A,Mitsubishi Eidan,Sextuplas,661,756,779,780,755,680,Metrovías,No,No
+C,Mitsubishi Eidan,Sextuplas,789,736,725,801,739,780,Original,No,No
+D,Mitsubishi Eidan,Sextuplas,797,784,781,798,802,782,Original y SBASE v0.5 (sólo 784),No,No
+E,Mitsubishi Eidan,Sextuplas,759,760,749,750,715,716,SBASE v0.5,No,No
+G,Mitsubishi Eidan,Sextuplas,689,679,799,690,678,676,Original,No,No
+H,Mitsubishi Eidan,Sextuplas,641,774,761,762,773,708,SBASE v0.5,No,No
+I,Mitsubishi Eidan,Sextuplas,657,311,703,590,310,770,Original,No,No
+K,Mitsubishi Eidan,Sextuplas,669,325,787,602,315,620,SBASE v1,Si,No
+L,Mitsubishi Eidan,Sextuplas,765,766,639,640,647,648,Metrovías,No,No
+M,Mitsubishi Eidan,Sextuplas,777,711,775,650,712,776,Metrovías,No,No
+N,Mitsubishi Eidan,Sextuplas,731,304,737,738,656,732,Original,No,No
+O,Mitsubishi Eidan,Sextuplas,735,767,768,745,754,696,Original y SBASE v0.5 (sólo 745),No,No
+P,Mitsubishi Eidan,Sextuplas,793,593,795,794,634,796,SBASE v1,Si,No
+Q,Mitsubishi Eidan,Sextuplas,741,907,785,786,908,724,Original,No,No
+S,Mitsubishi Eidan,Sextuplas,637,913,914,909,910,740,Original,No,No
+T,Mitsubishi Eidan,Sextuplas,653,744,700,729,719,720,Original,No,No
+V,CAF 5000,Duplas,5037,5048,5015,5016,5025,5026,Metrovías (mod SBASE),No,No
+W,CAF 5000,Duplas,5037,5038,5027,5028,5003,5004,Metrovías (mod SBASE),No,No
+Y,CAF 5000,Duplas,5013,5014,5045,5046,5021,5022,Metrovías (mod SBASE),No,No
+A1,CAF 6000,Duplas,6011,6012,6013,6014,6047,6048,SBASE v1,No,Si
+B1,CAF 6000,Duplas,6032,6031,6040,6039,6028,6027,SBASE v1,No,Si
+C1,CAF 6000,Duplas,6017,6018,6003,6004,6015,6016,SBASE v1,No,Si
+D1,CAF 6000,Duplas,6065,6066,6019,6020,6007,6008,SBASE v1,No,Si
+F1,CAF 6000,Duplas,6063,6064,6057,6058,6067,6068,SBASE v1,No,Si
+H1,CAF 6000,Triplas,6051,6451,6052,6045,6445,6046,SBASE v1,No,Si
+I1,CAF 6000,Duplas,6029,6030,6001,6002,6023,6024,SBASE v1,No,Si
+J1,CAF 6000,Duplas,6053,6054,6025,6026,6005,6006,SBASE v1,No,Si
+Z1,CAF 5000,Duplas,5067,5068,5072,5071,5105,5106,Metrovias (mod SBASE),No,Si

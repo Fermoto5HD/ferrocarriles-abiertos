@@ -18,8 +18,10 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.0-dev2
+* Cambios en scripts, vistas y elementos. 
 
-## v2.0.0-dev
+## v2.0.0-dev1
 * Carga inicial. Proyecto en pleno desarrollo 
 
 ## v1.x 

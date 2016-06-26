@@ -13,6 +13,11 @@
 			<h1>Flota Ferroviaria</h1>
 			<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
 			<p>Estos datos fueron relevados por mí, tanto en persona como por los datos de varios videos en YouTube (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>
+			<div class="alert alert-warning">
+				<strong>Versión en desarrollo: </strong>
+				<p>Esta versión no está operativa y tiene muchísimos errores que tienen que ser corregidos. </p>
+				<p>Para poder ver una versión totalmente operativa <a href="../">clickeá acá</a>. </p>
+			</div>
 		</div>
 	</div>
 	<div class="breadcrumb-container" id="jumbotron-caption">
@@ -25,63 +30,38 @@
 </section>
 <section>
 	<br>
-	<div class="container">
+	<div class="container" ng-controller="listRailways">
 		<h1>Subterráneos de Buenos Aires + Premetro</h1>
-		<p>Explotada por Metrovías S.A. y en parte por SBASE, cuenta con 6 líneas de subte (A, B, C, D, E y H), y con un Premetro (línea E2).</p>
+		<p>Explotada por Metrovías S.A. y en parte por Subterráneos de Buenos Aires Sociedad del Estado, cuenta con 6 líneas de subte (A, B, C, D, E y H), y con un Premetro (línea E2).</p>
 		<div class="row text-xs-center">
-			<div class="col-sm-6 col-lg-4 col-xl-3">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'subway'}">
 				<div class="card">
 					<div class="card-header">
-						<h2>Línea A</h2>
-						<p>12 formaciones en servicio</p>
+						<h2>{{line.hometitle}}</h2>
 					</div>
 					<div class="card-block">
-						<p>Compuesta por formaciones CNR Citic serie 200 y Fiat Materfer Fabricaciones Militares. </p>
+						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a href="#/linea/A" class="btn btn-primary">Ver flota actual</a>
+						<a href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-lg-4 col-xl-3">
+		</div>
+		<br/>
+		<h1>Ferrocarriles metropolitanos</h1>
+		<p>Explotados en su mayoría por Trenes Argentinos (Operadora Ferroviaria Sociedad del Estado) exceptuando las líneas Urquiza y Belgrano Norte que son explotadas por Metrovías S.A. y Ferrovías S.A. respectivamente.</p>
+		<div class="row text-xs-center">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'railway'}">
 				<div class="card">
 					<div class="card-header">
-						<h2>Línea B</h2>
-						<p>12 formaciones en servicio</p>
+						<h2>{{line.hometitle}}</h2>
 					</div>
 					<div class="card-block">
-						<p>Compuesta por formaciones Mitsubishi Eidan y CAF series 5000 y 6000. </p>
+						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a href="#/linea/A" class="btn btn-primary">Ver flota actual</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card">
-					<div class="card-header">
-						<h2>Línea C</h2>
-						<p>12 formaciones en servicio</p>
-					</div>
-					<div class="card-block">
-						<p>Compuesta por formaciones Nagoya series 250, 300, 1200 y 5000. </p>
-					</div>
-					<div class="card-footer">
-						<a href="#/linea/A" class="btn btn-primary">Ver flota actual</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card">
-					<div class="card-header">
-						<h2>Línea D</h2>
-						<p>12 formaciones en servicio</p>
-					</div>
-					<div class="card-block">
-						<p>Compuesta por Alstom Metropolis serie 100 y 300. </p>
-					</div>
-					<div class="card-footer">
-						<a href="#/linea/A" class="btn btn-primary">Ver flota actual</a>
+						<a href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
 					</div>
 				</div>
 			</div>

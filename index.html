@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="flota-ferroviaria">
 	<head>
-		<title>Flota Ferroviaria</title>
+		<title>Flota Ferroviaria (Dev demo)</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -12,12 +12,12 @@
 		<meta name="msapplication-TileColor" content="#282828">
 		<!-- Add to homescreen for Chrome on Android -->
 		<meta name="mobile-web-app-capable" content="no">
-		<meta name="application-name" content="Fermoto5HD">
+		<meta name="application-name" content="Flota Ferroviaria">
 		<link rel="icon" sizes="192x192" href="vendor/fm5strap/img/touch/chrome-touch-icon-192x192.png">
 		<!-- Add to homescreen for Safari on iOS -->
 		<meta name="apple-mobile-web-app-capable" content="no">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Fermoto5HD">
+		<meta name="apple-mobile-web-app-title" content="Flota Ferroviaria">
 		<link rel="apple-touch-icon" href="vendor/fm5strap/img/touch/apple-touch-icon.png">
 		<!-- Tile icon for Win8 (144x144) -->
 		<meta name="msapplication-TileImage" content="vendor/fm5strap/img/touch/ms-touch-icon-144x144-precomposed.png">
@@ -62,13 +62,13 @@
 							<a class="nav-link" href="#/">Inicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#/">Subterráneo</a>
+							<a class="nav-link disabled" href="#/">Subterráneo</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#/">Ferrocarriles</a>
+							<a class="nav-link disabled" href="#/">Ferrocarriles</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" nohref data-toggle="modal" data-target="#md-schemas">Esquemas</a>
+							<a class="nav-link disabled" nohref data-toggle="modal" data-target="#md-schemas">Esquemas</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" nohref data-toggle="modal" data-target="#md-about">Acerca de</a>
@@ -92,15 +92,83 @@
 				<div class="col-md-6">
 					<h4>Seguí el progreso del proyecto</h4>
 					<p>Visitá el repositorio del proyecto en GitHub:</p>
-					<a class="btn btn-primary" href="http://github.com/Fermoto5HD/flota-ferroviaria" target="_blank">Ir al repositorio</a>
+					<a class="btn btn-primary" href="http://github.com/Fermoto5HD/flota-ferroviaria/tree/v2.0.0-dev" target="_blank">Ir al repositorio</a>
 				</div>
 			</div>
 		</footer>
+
+		<div class="modal fade" id="md-about" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="modal-title">Acerca del proyecto</h2>
+					</div>
+				<div class="modal-body">
+					<p>Ante nada, gracias por visitar este sitio.</p>
+					<p>Mi objetivo principal en este sitio era mostrar la conformación de cada formación de cada línea ferroviaria, junto con algunos detalles adicionales.</p>
+					<p>Esto nació por un problema que siempre tenía en la cabeza cada vez que terminaba de filmar una formación porque siempre me olvidaba de anotar la letra, por lo tanto empecé a hacer un relevamiento personal de la flota de cada línea, en un principio enviando cada relevamiento como mensaje de Telegram hacia mi propio número, y después volcando esos datos en una planilla de Google Sheets para exportar estos mismos datos en CSV.</p>
+					<p>Hoy por hoy es una herramienta adicional para los ferroaficionados como yo, quienes dedicamos parte de nuestro tiempo a generar un buen archivo digital sobre los ferrocarriles.</p>
+					<hr>
+					<h3>Desarrollo</h3>
+					<p>El desarrollo del proyecto se irá dando de acuerdo al tiempo que tenga libre, tanto como para relevar como para mantener el sitio en condiciones. Se irá agregando información sobre cada línea y formación con el pasar del tiempo.</p>
+					<p>Por el momento los datos se están cargando en un cierto lapso de tiempo. Seguramente en una próxima actualización del sitio podré agregar un soporte de sincronización con Google Sheets, donde guardo las planillas de las líneas y mantener la información lo más actualizada posible.</p>
+					<hr>
+					<h3>¿Puedo colaborar?</h3>
+					<p>¡Por supuesto! Tenés tres formas de hacerlo:</p>
+					<div class="list-group" id="feedback">
+						<a href="http://github.com/Fermoto5HD/flota-ferroviaria" class="list-group-item" target="_blank">
+							<h4 class="list-group-item-heading">Issue mediante GitHub</h4>
+							<p class="list-group-item-text">La opción preferida de los programadores (me incluyo). En caso que tengas que reportar una falla hacelo con el tag correspondiente.</p>
+						</a>
+						<a href="http://twitter.com/Fermoto5HD" class="list-group-item" target="_blank">
+							<h4 class="list-group-item-heading">Tweet o MP por Twitter</h4>
+							<p class="list-group-item-text">Si no sos programador te dejo una vía fácil para contactarte conmigo, sea por un tweet de 140 caracteres o, si no te alcanza, por mensaje privado.</p>
+						</a>
+						<a href="http://plus.google.com/+Fermoto5HD" class="list-group-item" target="_blank">
+							<h4 class="list-group-item-heading">Publicación en Google+</h4>
+							<p class="list-group-item-text">Y si no tenés Twitter pero usás YouTube para comentar o subir videos te invito a que publiques en mi cuenta de Google+.</p>
+						</a>
+					</div>
+					<hr>
+					<h3>Para armar esto se necesitó</h3>
+						<ul class="list-group">
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v1.5.x</span> Angular
+							</li>
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v1.5.x</span> Angular Route
+							</li>
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v1.2.0</span> FM5strap
+							</li>
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v1.2.0</span> Tether
+							</li>
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v2.12.0</span> MomentJS with locales
+							</li>
+							<li class="list-group-item">
+								<span class="label label-default label-pill pull-xs-right">v0.0.2</span> Mucho café :)
+							</li>
+						</ul>
+						<br>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<script type="text/javascript" src="vendor/jquery/js/jquery.min.js"></script>
 		<script type="text/javascript" src="vendor/angular/js/angular.min.js"></script>
 		<script type="text/javascript" src="vendor/angular-route/js/angular-route.min.js"></script>
 		<script type="text/javascript" src="vendor/tether/js/tether.min.js"></script>
 		<script type="text/javascript" src="vendor/fm5strap/js/fm5strap.min.js"></script>
 		<script type="text/javascript" src="js/scripts-angu.js"></script>
+		<script type="text/javascript" src="js/scripts-jqjs.js"></script>
 	</body>
 </html>

@@ -17,11 +17,12 @@ app
 		.when('/about',{ 
 			templateUrl:'views/about.html'
 		})
-		.when('/404',{ 
-			templateUrl:'views/404.html' 
-		})
+		//.when('/404',{ 
+		//	templateUrl:'views/404.html' 
+		//})
 		.otherwise({
-			redirectTo: '/404'
+			//redirectTo: '/404'
+			redirectTo: '/'
 		});
 	})
 
@@ -36,12 +37,10 @@ app
 			var digit2 = $scope.rand2;
 			var sum = digit1 + digit2;
 			if (answer == ""){
-				alert("looks like you forgot something, hint it's the math question");
 				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
 				return false;
 			} else if (answer != sum){
-				alert("do you need a calculator? don't feel bad, math is not for everyone");
 				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
 				return false;
@@ -84,17 +83,42 @@ app
 		console.log('Default'); 
 		//$scope.agregar = function(){};
 	})
+	.controller('line', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
+		$scope.line = $routeParams.line; 
+		$scope.data = [
+			{ id:'A1', composition: 5, model: 'CNR Citic'},
+			{ id:'X', composition: 5, model: 'Fiat Materfer'}
+		]; 
+		$http.get('data/linea'+$routeParams.line+'.csv').success(function(data){
+			//console.log(data);
+			var lines, lineNumber, row, cell, length;
+			lines = data.match(/[^\r\n]+/g);
+			lineNumber = 0;
+			for (var i = 0; i < lines.length; i++) {
+				l = lines[i];
+				lineNumber++;
+				//console.log(l); 
+				row = l.split(/\t/);
+				console.log(row);
+				data = row[0].split(",");
+				//console.log(data);
+				//$scope.data.push({
+				//	name: name,
+				//	email: email,
+				//	status: "not sent"
+				//});
+				//var email = ? ? ?
+				//var name = ? ? ?
+				for (var k = 0; k < data.length; k++) {
+					console.log(data[k]);
+				}
+			};
+		});
+		//$scope.agregar = function(){};
+	}])
 
 	.controller('home', ['$http', '$scope', 'fact_youtube', function ($http, $scope, fact_youtube) {
 		console.log('Home'); 
-		var d = new Date();
-		var year = d.getFullYear();
-		var birth = moment("1994-11-05");
-		var birthday = moment(year+"-11-05");
-		var todaysdate = moment();
-		$scope.age = todaysdate.diff(birth, 'years');
-		$scope.nextbirthday = birthday.diff(todaysdate, 'days');
-		$scope.nextage = todaysdate.diff(birth, 'years')+1;
 
 		fact_youtube.getPlaylists("Fermoto5HD").then(function (response) {
 			$scope.$apply(function () {
@@ -148,7 +172,7 @@ app
 		}
 	}])
 
-	.factory('fact_InstagramAPI', ['$http', function($http) {
+	.factory('fact_saitamapic', ['$http', function($http) {
 		return {
 			fetchPhotos : function(callback) {
 				var tokenURL = 'https://www.instagram.com/oauth/authorize/?client_id=3c38d510e4ce43b08f4157fd0ee381fb&redirect_uri=http://localhost/&response_type=token';
@@ -164,10 +188,10 @@ app
 			}
 		}
 	}])
-	.factory('fact_portfolioList', ['$http', function($http) {
+	.factory('fact_listRailways', ['$http', function($http) {
 		return {
-			listPortfolio: function(callback) {
-				$http.get('data/portfolio.json').success(function(data){
+			listRailways: function(callback) {
+				$http.get('data/railways.json').success(function(data){
 					callback(data);
 				});
 			}
@@ -209,20 +233,21 @@ app
 		return {getChannelInfo: getChannelInfo, getPlaylists: getPlaylists, getPlaylistVideos: getPlaylistVideos }
 	}])
 
-	.controller('Saitama', function($scope, fact_InstagramAPI) {
+	.controller('Saitama', function($scope, fact_saitamapic) {
 		$scope.layout = 'list';
 		$scope.data = {};
 		$scope.pics = [];
 
-		fact_InstagramAPI.fetchPhotos(function(data) {
+		fact_saitamapic.fetchPhotos(function(data) {
 			if (data !== false) {
 				$scope.pics = data;
 			}
 		});
 	})
-	.controller('listPortfolio', ['$scope', 'fact_portfolioList', function ($scope, fact_portfolioList) {
-		$scope.portfolio = []; 
-		fact_portfolioList.listPortfolio(function(data) {
-			$scope.portfolio = data;
+	.controller('listRailways', ['$scope', 'fact_listRailways', function ($scope, fact_listRailways) {
+		$scope.test = "Test"; 
+		$scope.JSONlines = []; 
+		fact_listRailways.listRailways(function(data) {
+			$scope.JSONlines = data;
 		});
 	}]); 
