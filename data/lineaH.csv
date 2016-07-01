@@ -1,9 +1,4 @@
-Formación,Serie,Composición,Coches,1,2,3,4,5,6,Esquema
-A,Siemens Orenstein & Koppel,Duplas,4,R12,M12,M50,R50,,,Metrovías (mod SBASE)
-D,Siemens Orenstein & Koppel,Duplas,4,R13,M13,M41,R41,,,Metrovías (mod SBASE)
-F,Siemens Orenstein & Koppel,Duplas,4,M52,R52,R11,M11,,,Metrovías (mod SBASE)
-G,Siemens Orenstein & Koppel,Duplas,4,R37,M37,M5,R5,,,Metrovías (mod SBASE)
-H,Siemens Alstom-Emepa,Quintupla,5,Mca046,R046,Mp043,Rp035,Mcb035,,Metrovías (mod SBASE)
-I,Siemens Alstom-Emepa,Quintupla,5,Mca009,Rp009,Mp021,Rp001,Mcb001,,Metrovías (mod SBASE)
-K,Siemens Alstom-Emepa,Quintupla,5,Mca004,R004,Mp002,Rp026,Mcb026,,Metrovías (mod SBASE)
-L,Alstom Metropolis,Sextupla,6,Rcb301,Md301,Mc301,Mb301,Ma301,Rca301,Metrovías Metalizado (mod SBASE)
+Formación,1,2,3,4,5,6
+L,Rcb301,Md301,Mc301,Mb301,Ma301,Rca301
+M,Rcb307,Md307,Mc307,Mb307,Ma307,Rca307
+S,Rcb308,Md308,Mc308,Mb308,Ma308,Rca308

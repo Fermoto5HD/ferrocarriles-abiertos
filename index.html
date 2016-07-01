@@ -22,27 +22,27 @@
 		<!-- Tile icon for Win8 (144x144) -->
 		<meta name="msapplication-TileImage" content="vendor/fm5strap/img/touch/ms-touch-icon-144x144-precomposed.png">
 
-		<meta name="description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
-		<meta name="keywords" content="Fernando Osorio Fermoto5HD sitio personal portfolio" />
+		<meta name="description" content='En este sitio podrás saber la composición de las flotas de las principales líneas ferroviarias del AMBA'>
+		<meta name="keywords" content="Fernando Osorio Fermoto5HD flota ferroviaria racks" />
 		<meta name="author" content="Fernando Osorio (Fermoto5HD)" />
-		<meta name="thumbnail" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta name="thumbnail" content="http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria/dev/img/jumbotron/home/01.jpg" />
 		<!-- Meta og -->
-		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
-		<meta property="og:site_name" content="Sitio personal de Fermoto5HD" />
-		<meta property="og:title" content="Sitio personal de Fermoto5HD" />
-		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
+		<meta property="og:description" content='En este sitio podrás saber la composición de las flotas de las principales líneas ferroviarias del AMBA.'>
+		<meta property="og:site_name" content="Flota Ferroviaria" />
+		<meta property="og:title" content="Flota Ferroviaria" />
+		<meta property="og:description" content='En este sitio podrás saber la composición de las flotas de las principales líneas ferroviarias del AMBA.' />
 		<meta property="og:locale" content="es_AR" />
-		<meta property="og:url" content="http://Fermoto5HD.16mb.com/" />
-		<meta property="og:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta property="og:url" content="http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria" />
+		<meta property="og:image" content="http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria/dev/img/jumbotron/home/01.jpg" />
 		<meta property="og:type" content="website" />
 		<!-- Meta Twitter -->
-		<meta name="twitter:title" content="Sitio personal de Fermoto5HD" />
-		<meta name="twitter:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
+		<meta name="twitter:title" content="Flota Ferroviaria" />
+		<meta name="twitter:description" content='En este sitio podrás saber la composición de las flotas de las principales líneas ferroviarias del AMBA.' />
 		<meta name="twitter:card" content="photo" />
 		<meta name="twitter:site" content="@Fermoto5HD" />
 		<meta name="twitter:creator" content="@Fermoto5HD" />
-		<meta name="twitter:url" content="http://Fermoto5HD.16mb.com/" />
-		<meta name="twitter:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta name="twitter:url" content="http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria" />
+		<meta name="twitter:image" content="http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria/dev/img/jumbotron/home/01.jpg" />
 		<meta name="twitter:image:width" content="435" />
 		<meta name="twitter:image:height" content="290" />
 		<!-- Assets and vendors -->
@@ -157,6 +157,51 @@
 						<br>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="md-feedback" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="modal-title">¡Cooperá con el proyecto!</h2>
+					</div>
+					<div class="modal-body">
+						<h2>Siempre viene bien una mano o una sugerencia. El feedback es bien apreciado.</h2>
+						<p>Acá podrás sugerirme una mejora en el proyecto o simplemente avisarme de alguna actualización con respecto de la flota de alguna línea en particular. </p>
+						<div class="contact-form" ng-controller="feedbackform">
+							<form ng-submit="sendfeedback();">
+								<div ng-show="{{alert}}">
+									<div class="alert alert-success">{{success}}</div>
+								</div>
+								<fieldset class="form-group">
+									<label for="md-frm-name" class="required">Ante nada... ¿Cómo te llamás?</label></br>
+									<input type="text" class="form-control" ng-model="md_frm_name" id="md-frm-name" name="md-frm-name" placeholder="Tu nombre" tabindex="1" required>
+								</fieldset>
+								<fieldset class="form-group">
+									<label for="md-frm-email" class="required">¿Tenés correo para poder contestarte?</label>
+									<input type="email" class="form-control" ng-model="md_frm_email" id="md-frm-email" name="md-frm-email" placeholder="Tu correo" tabindex="2" required>
+								</fieldset>
+								<fieldset class="form-group">
+									<label for="md-frm-message" class="required">Perfecto! Escucho tu sugerencia!</label>
+									<textarea class="form-control" ng-model="md_frm_message" id="md-frm-message" name="md-frm-message" placeholder="El mensaje" rows="3" tabindex="4" required></textarea>
+								</fieldset>
+								<fieldset class="form-inline">
+									<label class="calcule">Matemática para humanos: {{rand1}} + {{rand2}} = </label>
+									<input type="number" class="form-control" ng-model="md_frm_mathcaptcha" id="md-frm-mathcaptcha" name="md-frm-mathcaptcha" placeholder="El resultado" tabindex="5" required></input>
+								</fieldset>
+								<br/>
+								<button type="submit" class="btn btn-primary btn-block" tabindex="6">¡Enviar mensaje!</button>
+							</form>
+						</div>
+						<br/>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 						</div>
 					</div>
 				</div>

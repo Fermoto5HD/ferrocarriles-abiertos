@@ -36,16 +36,20 @@
 			<div class="table-responsive">
 				<table class="table table-hover">
 					<thead>
-						<th>Formación</th>
-						<th>Composición</th>
-					</thead>
-					<tbody>
-						<tr ng-repeat="item in data | filter:linefilter">
-							<td>{{item.id}}</td>
-							<td>{{item.model}}</td>
+						<tr ng-repeat="x in thead">
+							<td ng-repeat="y in x">{{ y }}</td>
 						</tr>
-					</tbody>
+					</thead>
+					<tr ng-repeat="x in data | filter:linefilter">
+						<td ng-repeat="y in x">{{ y }}</td>
+					</tr>
 				</table>
+			</div>
+			<a class="btn btn-primary" href="data/linea{{line}}.csv">Descargar CSV</a>
+			<hr>
+			<div class="text-xs-center">
+				<h3>¿Tenés información para agregar o corregir? ¡Contactate conmigo!</h3>
+				<a class="btn btn-primary btn-lg" nohref data-toggle="modal" data-target="#md-feedback">Ayudame a mantenerlo actualizado</a>
 			</div>
 		</div>
 	</section>

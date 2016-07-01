@@ -26,7 +26,7 @@ app
 		});
 	})
 
-	.controller('contactform', function ($scope, $http, $compile) {
+	.controller('feedbackform', function ($scope, $http, $compile) {
 		$scope.modalShow = false;
 		$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 		$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
@@ -48,13 +48,13 @@ app
 				return true;
 			}
 		}
-		$scope.sendmail = function() {
+		$scope.sendfeedback = function() {
 		$scope.success = "";
 			if ($scope.addNums()) {
 				$http({
 					method: 'POST', 
-					url: 'php/mailing.php',
-					data: 'name=:'+ $scope.md_frm_name + '&email=' + $scope.md_frm_email + '&tel=' + $scope.md_frm_tel + '&msj='+$scope.md_frm_message,
+					url: 'php/feedback.php',
+					data: 'name=:'+ $scope.md_frm_name + '&email=' + $scope.md_frm_email + '&msj='+$scope.md_frm_message,
 					headers: {'Content-Type': 'application/x-www-form-urlencoded'}	
 				}).	
 				success(function(data, status) {
@@ -63,12 +63,11 @@ app
 					$scope.resultado = data;
 					$scope.md_frm_name = "";
 					$scope.md_frm_email = "";
-					$scope.md_frm_tel = "";
 					$scope.md_frm_message = "";
 					$scope.md_frm_mathcaptcha = "";
 					$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 					$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
-					$scope.success = "El mensaje fue enviado. Gracias por contactarte conmigo, te contestarÃ© lo mÃ¡s antes posible! ";
+					$scope.success = "El feedback fue enviado. Gracias por contactarte conmigo, te contestaré lo más antes posible! ";
 				}).
 				error(function(data, status) {
 					$scope.alert = true; 
@@ -89,30 +88,59 @@ app
 			{ id:'A1', composition: 5, model: 'CNR Citic'},
 			{ id:'X', composition: 5, model: 'Fiat Materfer'}
 		]; 
-		$http.get('data/linea'+$routeParams.line+'.csv').success(function(data){
-			//console.log(data);
-			var lines, lineNumber, row, cell, length;
-			lines = data.match(/[^\r\n]+/g);
-			lineNumber = 0;
-			for (var i = 0; i < lines.length; i++) {
-				l = lines[i];
-				lineNumber++;
-				//console.log(l); 
-				row = l.split(/\t/);
-				console.log(row);
-				data = row[0].split(",");
-				//console.log(data);
-				//$scope.data.push({
-				//	name: name,
-				//	email: email,
-				//	status: "not sent"
-				//});
-				//var email = ? ? ?
-				//var name = ? ? ?
-				for (var k = 0; k < data.length; k++) {
-					console.log(data[k]);
+		$http.get('data/linea'+$routeParams.line+'.csv').success(function(allText){
+			// //console.log(data);
+			// var lines, lineNumber, row, cell, length;
+			// lines = data.match(/[^\r\n]+/g);
+			// lineNumber = 0;
+			// for (var i = 0; i < lines.length; i++) {
+			// 	l = lines[i];
+			// 	lineNumber++;
+			// 	//console.log(l); 
+			// 	row = l.split(/\t/);
+			// 	console.log(row);
+			// 	data = row[0].split(",");
+			// 	//console.log(data);
+			// 	//$scope.data.push({
+			// 	//	name: name,
+			// 	//	email: email,
+			// 	//	status: "not sent"
+			// 	//});
+			// 	//var email = ? ? ?
+			// 	//var name = ? ? ?
+			// 	for (var k = 0; k < data.length; k++) {
+			// 		console.log(data[k]);
+			// 	}
+			// };
+			var allTextLines = allText.split(/\r\n|\n/);
+			var headers = allTextLines[0].split(',');
+			var tablehead = [];
+			var lines = [];
+
+			for ( var i = 0; i < allTextLines.length; i++) {
+				// split content based on comma
+				var data = allTextLines[i].split(',');
+				if (i === 0) {
+					if (data.length == headers.length) {
+						var tarr = [];
+						for ( var j = 0; j < headers.length; j++) {
+							tarr.push(data[j]);
+						}
+						tablehead.push(tarr);
+					}
+				} else {
+					if (data.length == headers.length) {
+						var tarr = [];
+						for ( var j = 0; j < headers.length; j++) {
+							tarr.push(data[j]);
+						}
+						lines.push(tarr);
+					}
 				}
-			};
+				
+			}
+			$scope.thead = tablehead;
+			$scope.data = lines;
 		});
 		//$scope.agregar = function(){};
 	}])

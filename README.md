@@ -18,6 +18,12 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.0-dev3
+Pre-versión estable. 
+* Parser de la tabla mediante Angular. 
+* Se agrega un formulario de feedback. 
+* Retoques adicionales. 
+
 ## v2.0.0-dev2
 * Cambios en scripts, vistas y elementos. 
 

@@ -1,18 +1,18 @@
-Formación,Serie,1,2,3,4,5,6,Esquema,¿Reparado?,¿AA?,Tipo de iluminación
-A,300,311,853,852,859,854,312,Metrovías (sólo franja gris),No,No,Tubo fluorescente
-B,300,319,862,857,855,858,320,Metrovías (mod SBASE),Si,No,Tubo fluorescente
-C,1200,1211,1811,1906,1710,1812,1212,Metrovías (mod SBASE),No,No,Tubo fluorescente
-D,300,317,849,850,851,864,318,Metrovías (mod SBASE),Si,No,LED de tonos fríos
-E,300,315,856,860,861,863,316,Metrovías (mod SBASE),Si,No,LED de tonos fríos
-F,1200,1205,1805,1903,1616,1806,1206,Metrovías (mod SBASE),No,No,Tubo fluorescente
-G,1200,1213,1813,1907,1704,1814,1214,Metrovías (mod SBASE),Si,No,LED de tonos fríos
-H,250,267,748,749,744,763,268,Metrovías (mod SBASE),No,No,Tubo fluorescente
-I,250,263,756,757,741,742,264,Metrovías (mod SBASE),No,No,Tubo fluorescente
-J,300,333,865,866,867,868,334,Metrovías (mod SBASE),Si,No,LED de tonos fríos
-K,300,335,869,870,871,872,336,Metrovías (mod SBASE),No,No,Tubo fluorescente
-L,300,337,873,874,875,876,338,Metrovías (mod SBASE),No,No,Tubo fluorescente
-M,1200,1207,1807,1904,1618,1808,1208,Metrovías (mod SBASE),No,No,Tubo fluorescente
-N,5000,5115,5215,5315,5415,5515,5615,SBASE metalizado,No,Si,Tubo fluorescente
-O,5000,5103,5203,5303,5403,5503,5603,SBASE metalizado,No,Si,Tubo fluorescente
-P,5000,5112,5212,5312,5412,5512,5612,SBASE metalizado,No,Si,Tubo fluorescente
-Q,5000,5122,5222,5322,5422,5522,5622,SBASE metalizado,No,Si,Tubo fluorescente
+Formación,Serie,1,2,3,4,5,6,Esquema,Estado,¿AA?,Tipo de iluminación
+A,300,311,853,852,859,854,312,Metrovías (sólo franja gris),Original,No,Tubo fluorescente
+B,300,319,862,857,855,858,320,Metrovías (mod SBASE),Reparado,No,Tubo fluorescente
+C,1200,1211,1811,1906,1710,1812,1212,Metrovías (mod SBASE),En reparación,No,Tubo fluorescente
+D,300,317,849,850,851,864,318,Metrovías (mod SBASE),Reparado,No,LED de tonos fríos
+E,300,315,856,860,861,863,316,Metrovías (mod SBASE),Reparado,No,LED de tonos fríos
+F,1200,1205,1805,1903,1616,1806,1206,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+G,1200,1213,1813,1907,1704,1814,1214,Metrovías (mod SBASE),Reparado,No,LED de tonos fríos
+H,250,267,748,749,744,763,268,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+I,250,263,756,757,741,742,264,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+J,300,333,865,866,867,868,334,Metrovías (mod SBASE),Reparado,No,LED de tonos fríos
+K,300,335,869,870,871,872,336,Metrovías (mod SBASE),Reparado,No,Tubo fluorescente
+L,300,337,873,874,875,876,338,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+M,1200,1207,1807,1904,1618,1808,1208,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+N,5000,5115,5215,5315,5415,5515,5615,SBASE metalizado,Original,Si,Tubo fluorescente
+O,5000,5103,5203,5303,5403,5503,5603,SBASE metalizado,Original,Si,Tubo fluorescente
+P,5000,5112,5212,5312,5412,5512,5612,SBASE metalizado,Original,Si,Tubo fluorescente
+Q,5000,5122,5222,5322,5422,5522,5622,SBASE metalizado,Original,Si,Tubo fluorescente
