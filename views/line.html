@@ -1,6 +1,6 @@
 <div ng-controller="listRailways">
 	<section ng-repeat="linedata in JSONlines | filter:{line: line}:true">
-		<div class="jumbotron-container" style="background-image: url(img/jumbotron/home/01.jpg)">
+		<div ng-if="linedata.cover !== false" class="jumbotron-container" style="background-image: url(img/jumbotron/{{linedata.cover[randomize(linedata.cover.length)].file}})">
 			<div class="breadcrumb-container">
 				<div class="container">
 					<ol class="breadcrumb">
@@ -20,11 +20,37 @@
 			<div class="breadcrumb-container" id="jumbotron-caption">
 				<div class="container">
 					<div class="breadcrumb">
-						<i class="fa fa-picture-o" aria-hidden="true"></i> Coche Rca212 | Formación 12 | Tomada en la estación San Pedrito.</div>
+						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="jumbotron-container" ng-if="linedata.cover === false">
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><a href="/">Fermoto5HD</a></li>
+						<li><a href="/portfolio">Portfolio</a></li>
+						<li><a href="#/">Flota Ferroviaria</a></li>
+						<li class="active">{{linedata.hometitle}}</li>
+					</ol>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1>{{linedata.titlesection}}</h1>
+					<p>{{linedata.description}}</p>
+				</div>
+			</div>
+		</div>
+
+
+			<span ng-if="linedata.cover !== false" class="container">
+				<!--{{linedata.cover}}
+				{{linedata.cover[linedata.cover.length - 1]}}
+				<br/><br/>-->
+				
+			</span>
 	</section>
 	<section>
 		<br/>
@@ -45,7 +71,21 @@
 					</tr>
 				</table>
 			</div>
-			<a class="btn btn-primary" href="data/linea{{line}}.csv">Descargar CSV</a>
+			<div ng-controller="listRailways">
+				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true" class="btn-group">
+					<div class="btn-group">
+						<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" href="data/{{item.file}}">Descargar CSV</a>
+						<button ng-if="linedata.downloads.length > 1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="sr-only">Historial</span>
+						</button>
+						<div ng-if="linedata.downloads.length > 1" class="dropdown-menu">
+							<span ng-repeat="item in linedata.downloads">
+								<a ng-if="$index < linedata.downloads.length - 1" class="dropdown-item" href="data/{{item.file}}">{{item.year}} | {{item.month}}</a>
+							</span>
+						</div>
+					</div>
+				</span>
+			</div>
 			<hr>
 			<div class="text-xs-center">
 				<h3>¿Tenés información para agregar o corregir? ¡Contactate conmigo!</h3>

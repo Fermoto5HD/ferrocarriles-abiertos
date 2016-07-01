@@ -13,10 +13,6 @@
 			<h1>Flota Ferroviaria</h1>
 			<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
 			<p>Estos datos fueron relevados por mí, tanto en persona como por los datos de varios videos en YouTube (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>
-			<div class="alert alert-warning">
-				<strong>Versión en desarrollo: </strong>
-				<p>Esta versión ya está casi operativa aunque tiene algunos errores que tienen que ser corregidos. </p>
-			</div>
 		</div>
 	</div>
 	<div class="breadcrumb-container" id="jumbotron-caption">
@@ -42,7 +38,9 @@
 						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory === false" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory" href="#/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
+						<a ng-if="line.available === false" href="#/linea/{{line.line}}" class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
 			</div>
@@ -60,7 +58,8 @@
 						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available === false" href="#/linea/{{line.line}}" class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
 			</div>

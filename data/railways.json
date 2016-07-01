@@ -10,9 +10,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaA-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaA.csv"}
 		], 
 		"cover": false
 	}, 
@@ -27,9 +27,9 @@
 		"provisory": true, 
 		"state": "provisory", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaB-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaB.csv"}
 		], 
 		"cover": [
 			{"file": "lineaB/01.jpg",	"caption": "Formación P | Coche 794 | Fotografiado el 20 de Mayo de 2016 a las 07:17pm"}, 
@@ -51,9 +51,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaC-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaC.csv"}
 		], 
 		"cover": [
 			{"file": "lineaC/01.png",	"caption": "Formación K | Coches 870 y 871 | Captura de filmación del 30 de Mayo de 2016 a las 08:38pm"}
@@ -70,9 +70,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaD-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaD-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaD-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaD.csv"}
 		], 
 		"cover": [
 			{"file": "lineaD/01.jpg",	"caption": "Formación A | Coche Rca101 | Fotografiado el 2 de Mayo de 2016 a las 08:59pm"}
@@ -89,9 +89,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Marzo", "file": "lineaE-Junio2016.csv"}, 
+			{"year": 2016, "month": "Abril", "file": "lineaE.csv"}
 		], 
 		"cover": false
 	}, 
@@ -106,9 +106,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaH-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaH.csv"}
 		], 
 		"cover": [
 			{"file": "lineaH/01.jpg",	"caption": "Formación L | Coche Mb301 | Fotografiado el 18 de Mayo de 2016 a las 08:17pm"}
@@ -125,9 +125,8 @@
 		"provisory": true, 
 		"state": "provisory", 
 		"locomotivepark": false, 
-		"history": [
-			{"month": "Marzo 2016", "file": "lineaA-Marzo2016.csv"}, 
-			{"month": "Abril 2016", "file": "lineaA-Abril2016.csv"}
+		"downloads": [
+			{"year": 2016, "month": "Abril", "file": "lineaPremetro.csv"}
 		], 
 		"cover": false
 	}, 
@@ -142,6 +141,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"downloads": [
+			{"year": 2016, "month": "Mayo", "file": "lineaSarmiento.csv"}
+		], 
 		"cover": false
 	}, 
 	{
@@ -155,6 +157,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"downloads": [
+			{"year": 2016, "month": "Junio", "file": "lineaMitre.csv"}
+		], 
 		"cover": [
 			{"file": "lineaMitre/01.jpg",	"caption": "Formación M07 | Coche MC037 | Fotografiado el 21 de Mayo de 2016 a las 12:58am"}
 		]
@@ -183,6 +188,9 @@
 		"provisory": true, 
 		"state": "provisory", 
 		"locomotivepark": true, 
+		"downloads": [
+			{"year": 2016, "month": "Mayo", "file": "lineaSanMartin.csv"}
+		], 
 		"cover": false
 	},
 	{
@@ -196,6 +204,9 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"downloads": [
+			{"year": 2016, "month": "Abril", "file": "lineaUrquiza.csv"}
+		], 
 		"cover": false
 	},
 	{

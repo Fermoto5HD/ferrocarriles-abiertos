@@ -18,6 +18,14 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.0-dev4
+Cambios finales antes de lanzarse como versión final. 
+* Layout: Accesos rápidos a las líneas desde el navbar. 
+* Home: Botones diferenciados entre final, provisorio y no disponibles. 
+* Line: Covers randomizados mediante Angular. 
+* Line: Soporte de descarga de varios CSVs. 
+* **Restante**:  Agregar soporte de Moment (en lo posible integrarlo con Angular)
+
 ## v2.0.0-dev3
 Pre-versión estable. 
 * Parser de la tabla mediante Angular. 

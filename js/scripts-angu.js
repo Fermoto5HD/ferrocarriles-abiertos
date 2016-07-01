@@ -83,35 +83,14 @@ app
 		//$scope.agregar = function(){};
 	})
 	.controller('line', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
+		var randomresult = undefined; 
+		var onlyone = 0; 
 		$scope.line = $routeParams.line; 
 		$scope.data = [
 			{ id:'A1', composition: 5, model: 'CNR Citic'},
 			{ id:'X', composition: 5, model: 'Fiat Materfer'}
 		]; 
 		$http.get('data/linea'+$routeParams.line+'.csv').success(function(allText){
-			// //console.log(data);
-			// var lines, lineNumber, row, cell, length;
-			// lines = data.match(/[^\r\n]+/g);
-			// lineNumber = 0;
-			// for (var i = 0; i < lines.length; i++) {
-			// 	l = lines[i];
-			// 	lineNumber++;
-			// 	//console.log(l); 
-			// 	row = l.split(/\t/);
-			// 	console.log(row);
-			// 	data = row[0].split(",");
-			// 	//console.log(data);
-			// 	//$scope.data.push({
-			// 	//	name: name,
-			// 	//	email: email,
-			// 	//	status: "not sent"
-			// 	//});
-			// 	//var email = ? ? ?
-			// 	//var name = ? ? ?
-			// 	for (var k = 0; k < data.length; k++) {
-			// 		console.log(data[k]);
-			// 	}
-			// };
 			var allTextLines = allText.split(/\r\n|\n/);
 			var headers = allTextLines[0].split(',');
 			var tablehead = [];
@@ -142,7 +121,12 @@ app
 			$scope.thead = tablehead;
 			$scope.data = lines;
 		});
-		//$scope.agregar = function(){};
+		$scope.randomize = function(datalength) {
+			if (randomresult === undefined) {
+				randomresult = Math.floor(Math.random()*datalength); 
+			} 
+			return randomresult;
+		}; 
 	}])
 
 	.controller('home', ['$http', '$scope', 'fact_youtube', function ($http, $scope, fact_youtube) {

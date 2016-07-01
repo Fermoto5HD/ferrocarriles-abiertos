@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="flota-ferroviaria">
 	<head>
-		<title>Flota Ferroviaria (Dev demo)</title>
+		<title>Flota Ferroviaria</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -61,11 +61,27 @@
 						<li class="nav-item">
 							<a class="nav-link" href="#/">Inicio</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#/">Subterráneo</a>
+						<li class="nav-item btn-group" ng-controller="listRailways">
+							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-subway" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Subterráneo
+							</a>
+							<div class="dropdown-menu" aria-labelledby="menu-responsive-subway">
+								<span ng-repeat="line in JSONlines | filter:{type:'subway'}">
+									<a ng-if="line.available" href="#/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
+								</span>
+							</div>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#/">Ferrocarriles</a>
+						<li class="nav-item btn-group" ng-controller="listRailways">
+							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-railway" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Ferrocarriles
+							</a>
+							<div class="dropdown-menu" aria-labelledby="menu-responsive-railway">
+								<span ng-repeat="line in JSONlines | filter:{type:'railway'}">
+									<a ng-if="line.available" href="#/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
+								</span>
+							</div>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link disabled" nohref data-toggle="modal" data-target="#md-schemas">Esquemas</a>
@@ -77,7 +93,7 @@
 				</div>
 			</nav>
 		</header>
-		<main class="content-w-fixed-navbar" ng-view></main>
+		<main class="content-w-fixed-navbar" ng-view autoscroll="true"></main>
 		<footer>
 			<div class="container">
 				<div class="col-md-6">
@@ -119,6 +135,10 @@
 					<h3>¿Puedo colaborar?</h3>
 					<p>¡Por supuesto! Tenés tres formas de hacerlo:</p>
 					<div class="list-group" id="feedback">
+						<a nohref class="list-group-item" data-toggle="modal" data-target="#md-feedback">
+							<h4 class="list-group-item-heading">Formulario de feedback</h4>
+							<p class="list-group-item-text">El método más sencillo para aportar. Podés enviar tus comentarios, sugerencias y aportes con sólo llenar un formulario.</p>
+						</a>
 						<a href="http://github.com/Fermoto5HD/flota-ferroviaria" class="list-group-item" target="_blank">
 							<h4 class="list-group-item-heading">Issue mediante GitHub</h4>
 							<p class="list-group-item-text">La opción preferida de los programadores (me incluyo). En caso que tengas que reportar una falla hacelo con el tag correspondiente.</p>
@@ -196,7 +216,7 @@
 									<input type="number" class="form-control" ng-model="md_frm_mathcaptcha" id="md-frm-mathcaptcha" name="md-frm-mathcaptcha" placeholder="El resultado" tabindex="5" required></input>
 								</fieldset>
 								<br/>
-								<button type="submit" class="btn btn-primary btn-block" tabindex="6">¡Enviar mensaje!</button>
+								<button type="submit" class="btn btn-primary btn-block" tabindex="6">¡Enviar feedback!</button>
 							</form>
 						</div>
 						<br/>
