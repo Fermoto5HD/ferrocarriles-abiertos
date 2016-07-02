@@ -90,8 +90,8 @@
 		"state": "final", 
 		"locomotivepark": false, 
 		"downloads": [
-			{"year": 2016, "month": "Marzo", "file": "lineaE-Junio2016.csv"}, 
-			{"year": 2016, "month": "Abril", "file": "lineaE.csv"}
+			{"year": 2016, "month": "Junio", "file": "lineaE-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaE.csv"}
 		], 
 		"cover": false
 	}, 
@@ -101,7 +101,7 @@
 		"hometitle": "Línea H", 
 		"homedescription": "Compuesta por Alstom Metropolis serie 300.", 
 		"titlesection": "Flota de la Línea H", 
-		"description": "Flota conformada por coches Alstom Metropolis serie 300 configurados por formaciones de 6 coches en sextupla única interconectada, y vienen con el esquema Metrovías Metalizado (modificación SBASE) de fábrica. \n El tiempo de aviso de cierre de puertas son de 3 segundos. \n El orden de los coches dispuesto en la tabla tiene al 1er coche mirando hacia Las Heras y el 6to coche mirando hacia Hospitales. ", 
+		"description": "Flota conformada por coches Alstom Metropolis serie 300 configurados por formaciones de 6 coches en sextupla única interconectada, y vienen con el esquema Metrovías Metalizado (modificación SBASE) de fábrica. <br/>Estas formaciones son las primeras en llegar con el sistema CBTC integrado, permitiendo así la futura automatización de la línea. <br/>El tiempo de aviso de cierre de puertas son de 3 segundos. <br/> El orden de los coches dispuesto en la tabla tiene al 1er coche mirando hacia Hospitales y el 6to coche mirando hacia Las Heras. ", 
 		"available": true, 
 		"provisory": false, 
 		"state": "final", 

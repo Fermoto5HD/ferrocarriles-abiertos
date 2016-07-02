@@ -14,13 +14,33 @@
 			<div class="jumbotron">
 				<div class="container">
 					<h1>{{linedata.titlesection}}</h1>
-					<p>{{linedata.description}}</p>
+					<p ng-bind-html="linedata.description"></p>
 				</div>
 			</div>
-			<div class="breadcrumb-container" id="jumbotron-caption">
+			<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer">
 				<div class="container">
 					<div class="breadcrumb">
-						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}</div>
+						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}
+					</div>
+				</div>
+			</div>
+			<!-- -->
+			<div class="modal fade" id="md-viewpic" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2 class="modal-title">Imagen</h2>
+						</div>
+						<div class="modal-body">
+							<img class="img-thumbnail" src="img/jumbotron/{{linedata.cover[randomize(linedata.cover.length)].file}}">
+							<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}</figcaption>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -39,7 +59,7 @@
 			<div class="jumbotron">
 				<div class="container">
 					<h1>{{linedata.titlesection}}</h1>
-					<p>{{linedata.description}}</p>
+					<p ng-bind-html="linedata.description"></p>
 				</div>
 			</div>
 		</div>
@@ -55,7 +75,7 @@
 	<section>
 		<br/>
 		<div class="container">
-			<div class="h3"><strong>Última modificación: </strong><span>Hace un mes</span></div>
+			<div class="h3"><strong>Última modificación: </strong><span am-time-ago="lastmod" title="Modificado el {{lastmod | amUtcOffset:'-0300' | amDateFormat:'MM/DD/YYYY HH:mm:ss'}}"></span></div>
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="linefilter" placeholder="Buscar en la tabla (formaciones, coches, etc...)">
 			</div>

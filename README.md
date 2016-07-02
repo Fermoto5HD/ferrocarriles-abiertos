@@ -13,11 +13,21 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 ## Componentes utilizados 
 * Angular v1.5.x 
 * Angular -> Angular-route 
+* Angular -> Angular-sanitize 
+* Angular -> Angular-moment 
 * jQuery 
+* MomentJS
+* MomentJS -> ES locale 
 * FM5strap v1.x 
 * Tether 
 
 #Changelog
+## v2.0.0
+Versión final, se mergeará la nueva versión en master. La versión anterior quedará en el branch v1.x.x. 
+* Script: Soporte de Moment vía Angular. 
+* Layout: Agregados modals de foto expandida y esquemas.
+* Line: Fixeo de bug en jumbotron. 
+
 ## v2.0.0-dev4
 Cambios finales antes de lanzarse como versión final. 
 * Layout: Accesos rápidos a las líneas desde el navbar. 
@@ -39,7 +49,7 @@ Pre-versión estable.
 * Carga inicial. Proyecto en pleno desarrollo 
 
 ## v1.x 
-Para ver esa versión cambiá de branch a "master". 
+Para ver esa versión cambiá de branch a "v1". 
 
 ## Reutilización de archivos 
 Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 

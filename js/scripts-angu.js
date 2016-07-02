@@ -1,6 +1,9 @@
-var app = angular.module('flota-ferroviaria', ['ngRoute']);
+var app = angular.module('flota-ferroviaria', ['ngRoute', 'ngSanitize', 'angularMoment']);
 var token = ""; 
 app
+	.run(function(amMoment) {
+		amMoment.changeLocale('es');
+	})
 	.config(function($routeProvider){
 		$routeProvider
 		.when('/',{ 
@@ -86,13 +89,9 @@ app
 		var randomresult = undefined; 
 		var onlyone = 0; 
 		$scope.line = $routeParams.line; 
-		$scope.data = [
-			{ id:'A1', composition: 5, model: 'CNR Citic'},
-			{ id:'X', composition: 5, model: 'Fiat Materfer'}
-		]; 
-		$http.get('data/linea'+$routeParams.line+'.csv').success(function(allText){
+		$http.get('data/linea'+$routeParams.line+'.csv').success(function(allText, status, headers){
 			var allTextLines = allText.split(/\r\n|\n/);
-			var headers = allTextLines[0].split(',');
+			var heads = allTextLines[0].split(',');
 			var tablehead = [];
 			var lines = [];
 
@@ -100,17 +99,17 @@ app
 				// split content based on comma
 				var data = allTextLines[i].split(',');
 				if (i === 0) {
-					if (data.length == headers.length) {
+					if (data.length == heads.length) {
 						var tarr = [];
-						for ( var j = 0; j < headers.length; j++) {
+						for ( var j = 0; j < heads.length; j++) {
 							tarr.push(data[j]);
 						}
 						tablehead.push(tarr);
 					}
 				} else {
-					if (data.length == headers.length) {
+					if (data.length == heads.length) {
 						var tarr = [];
-						for ( var j = 0; j < headers.length; j++) {
+						for ( var j = 0; j < heads.length; j++) {
 							tarr.push(data[j]);
 						}
 						lines.push(tarr);
@@ -120,6 +119,7 @@ app
 			}
 			$scope.thead = tablehead;
 			$scope.data = lines;
+			$scope.lastmod = headers()['last-modified']; 
 		});
 		$scope.randomize = function(datalength) {
 			if (randomresult === undefined) {
