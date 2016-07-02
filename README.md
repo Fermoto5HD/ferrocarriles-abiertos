@@ -2,8 +2,8 @@
 Este es un proyecto personal el cual reúne las características y composiciones de las formaciones de la flota ferroviaria del Area Metropolitana de Buenos Aires. 
 Estos datos se van a ir actualizando conforme a los cambios que se vayan realizando en el ámbito ferroviario. 
 
-## Versión en desarrollo 
-Esta versión es una reescritura total del proyecto, ya que decidí no mantener más la base en Polymer, dado a la dificultad del uso y manejo de los elementos como iron-ajax, que dió mucho problema al querer pasar archivos CSV por parámetro. 
+## Sobre la v2.x.x 
+Esta versión es una reescritura total del proyecto, ya que decidí no mantener más la base en Polymer (v1.x.x), dado a la dificultad del uso y manejo de los elementos como iron-ajax, que dió mucho problema al querer pasar archivos CSV por parámetro. 
 
 ## ¿Qué tengo que hacer para ejecutarlo sin errores? 
 * Montarlo en xampp o correrlo con ruby. 
@@ -22,6 +22,9 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.0.1 
+* Cambios en README.md, actualización de textos. 
+
 ## v2.0.0
 Versión final, se mergeará la nueva versión en master. La versión anterior quedará en el branch v1.x.x. 
 * Script: Soporte de Moment vía Angular. 
@@ -48,8 +51,8 @@ Pre-versión estable.
 ## v2.0.0-dev1
 * Carga inicial. Proyecto en pleno desarrollo 
 
-## v1.x 
-Para ver esa versión cambiá de branch a "v1". 
+## v1.x.x 
+Para ver esa versión cambiá de branch a "v1.x.x". 
 
 ## Reutilización de archivos 
 Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 
