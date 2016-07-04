@@ -22,6 +22,12 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.0.2
+* General: Dependencias actualizadas. 
+* Home: Fix de soporte de flota provisoria en ferrocarriles metropolitanos. 
+* Home: Fix de link al repositorio (apuntaba al branch v2.0.0-dev). 
+* Data: JSON de ferrocarriles actualizado. 
+
 ## v2.0.0.1 
 * Cambios en README.md, actualización de textos. 
 

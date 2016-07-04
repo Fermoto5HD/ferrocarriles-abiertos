@@ -40,7 +40,7 @@
 					<div class="card-footer">
 						<a ng-if="line.available && line.provisory === false" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
 						<a ng-if="line.available && line.provisory" href="#/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
-						<a ng-if="line.available === false" href="#/linea/{{line.line}}" class="btn btn-danger disabled">No disponible</a>
+						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
 			</div>
@@ -58,8 +58,9 @@
 						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a ng-if="line.available" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
-						<a ng-if="line.available === false" href="#/linea/{{line.line}}" class="btn btn-danger disabled">No disponible</a>
+						<a ng-if="line.available && line.provisory === false" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory" href="#/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
+						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
 			</div>
