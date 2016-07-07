@@ -28,6 +28,12 @@ app
 			redirectTo: '/'
 		});
 	})
+	
+	.filter('reverse', function() {
+		return function(items) {
+			return items.slice().reverse();
+		};
+	})
 
 	.controller('feedbackform', function ($scope, $http, $compile) {
 		$scope.modalShow = false;
@@ -121,6 +127,40 @@ app
 			$scope.data = lines;
 			$scope.lastmod = headers()['last-modified']; 
 		});
+		$scope.loadCSV = function(file){
+			$http.get('data/'+file).success(function(allText, status, headers){
+				var allTextLines = allText.split(/\r\n|\n/);
+				var heads = allTextLines[0].split(',');
+				var tablehead = [];
+				var lines = [];
+
+				for ( var i = 0; i < allTextLines.length; i++) {
+					// split content based on comma
+					var data = allTextLines[i].split(',');
+					if (i === 0) {
+						if (data.length == heads.length) {
+							var tarr = [];
+							for ( var j = 0; j < heads.length; j++) {
+								tarr.push(data[j]);
+							}
+							tablehead.push(tarr);
+						}
+					} else {
+						if (data.length == heads.length) {
+							var tarr = [];
+							for ( var j = 0; j < heads.length; j++) {
+								tarr.push(data[j]);
+							}
+							lines.push(tarr);
+						}
+					}
+					
+				}
+				$scope.thead = tablehead;
+				$scope.data = lines;
+				$scope.lastmod = headers()['last-modified']; 
+			});
+		}
 		$scope.randomize = function(datalength) {
 			if (randomresult === undefined) {
 				randomresult = Math.floor(Math.random()*datalength); 

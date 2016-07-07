@@ -11,7 +11,7 @@
 					</ol>
 				</div>
 			</div>
-			<div class="jumbotron">
+			<div class="jumbotron w-breadcrumb">
 				<div class="container">
 					<h1>{{linedata.titlesection}}</h1>
 					<p ng-bind-html="linedata.description"></p>
@@ -73,8 +73,33 @@
 			</span>
 	</section>
 	<section>
-		<br/>
 		<div class="container">
+			<div ng-controller="listRailways">
+				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true | reverse">
+					<!--<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+					<!--<span ng-if="linedata.downloads.length > 0">-->
+						<span ng-repeat="item in linedata.downloads">
+							<a ng-if="$index < linedata.downloads.length - 1" class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>
+						</span>
+					<!--</span>-->
+				</span>
+			</div>
+			<div class="btn btn-primary">Mes en curso</div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Historial 2016
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item disabled" nohref><strong>Junio</strong></a>
+					<a class="dropdown-item" href="#">Mes completo</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item disabled" nohref><strong>Julio</strong></a>
+					<a class="dropdown-item" href="#">Semana 01</a>
+					<a class="dropdown-item" href="#">Separated link</a>
+				</div>
+			</div>
+			<br/>
+			<br/>
 			<div class="h3"><strong>Última modificación: </strong><span am-time-ago="lastmod" title="Modificado el {{lastmod | amUtcOffset:'-0300' | amDateFormat:'MM/DD/YYYY HH:mm:ss'}}"></span></div>
 			<div class="form-group">
 				<input type="text" class="form-control" ng-model="linefilter" placeholder="Buscar en la tabla (formaciones, coches, etc...)">

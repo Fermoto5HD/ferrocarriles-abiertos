@@ -72,6 +72,7 @@
 		"locomotivepark": false, 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaD-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio Semana 01", "file": "lineaD-Julio2016_01.csv"}, 
 			{"year": 2016, "month": "Julio", "file": "lineaD.csv"}
 		], 
 		"cover": [
