@@ -11,13 +11,13 @@
 					</ol>
 				</div>
 			</div>
-			<div class="jumbotron w-breadcrumb">
+			<div class="jumbotron">
 				<div class="container">
 					<h1>{{linedata.titlesection}}</h1>
 					<p ng-bind-html="linedata.description"></p>
 				</div>
 			</div>
-			<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer">
+			<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
 				<div class="container">
 					<div class="breadcrumb">
 						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}
@@ -63,40 +63,30 @@
 				</div>
 			</div>
 		</div>
-
-
-			<span ng-if="linedata.cover !== false" class="container">
-				<!--{{linedata.cover}}
-				{{linedata.cover[linedata.cover.length - 1]}}
-				<br/><br/>-->
-				
-			</span>
 	</section>
-	<section>
+	<section style="padding-top: 40px;">
 		<div class="container">
 			<div ng-controller="listRailways">
-				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true | reverse">
-					<!--<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
-					<!--<span ng-if="linedata.downloads.length > 0">-->
-						<span ng-repeat="item in linedata.downloads">
-							<a ng-if="$index < linedata.downloads.length - 1" class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>
-						</span>
-					<!--</span>-->
+				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true">
+					<span ng-if="linedata.downloads.length > 1">
+						<!--<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+						<!--<span ng-if="linedata.downloads.length > 0">-->
+							<span ng-repeat="item in linedata.downloads | reverse">
+								<a ng-if="$index === 0" class="btn btn-primary" ng-click="loadCSV(item.file)">Último relevamiento ({{item.month}} {{item.year}})</a>
+								<!--<a ng-if="$index < linedata.downloads.length - 1" class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+								<!--<a class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+							</span>
+							<div class="btn-group">
+								<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Relevamientos anteriores
+								</button>
+								<div class="dropdown-menu">
+									<a ng-repeat="item in linedata.downloads | reverse" ng-if="$index > 0" class="dropdown-item" ng-click="loadCSV(item.file)" style="cursor: pointer">{{item.year}} | {{item.month}}</a>
+								</div>
+							</div>
+						<!--</span>-->
+					</span>
 				</span>
-			</div>
-			<div class="btn btn-primary">Mes en curso</div>
-			<div class="btn-group">
-				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Historial 2016
-				</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item disabled" nohref><strong>Junio</strong></a>
-					<a class="dropdown-item" href="#">Mes completo</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item disabled" nohref><strong>Julio</strong></a>
-					<a class="dropdown-item" href="#">Semana 01</a>
-					<a class="dropdown-item" href="#">Separated link</a>
-				</div>
 			</div>
 			<br/>
 			<br/>
@@ -112,14 +102,14 @@
 						</tr>
 					</thead>
 					<tr ng-repeat="x in data | filter:linefilter">
-						<td ng-repeat="y in x">{{ y }}</td>
+						<td ng-repeat="y in x track by $index">{{ y }}</td>
 					</tr>
 				</table>
 			</div>
 			<div ng-controller="listRailways">
 				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true" class="btn-group">
 					<div class="btn-group">
-						<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" href="data/{{item.file}}">Descargar CSV</a>
+						<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" href="data/{{item.file}}">Descargar CSV ({{item.month}} {{item.year}})</a>
 						<button ng-if="linedata.downloads.length > 1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span class="sr-only">Historial</span>
 						</button>

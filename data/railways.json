@@ -243,11 +243,14 @@
 		"hometitle": "Tren de la Costa", 
 		"homedescription": "Compuesta por trenes CAF.", 
 		"titlesection": "Flota del Tren de la Costa", 
-		"description": "", 
-		"available": false, 
-		"provisory": false, 
+		"description": "Conformada por formaciones articuladas CAF traídas desde España en la década de los 90 con la reactivación de este ex-ramal de la Línea Mitre. <br/>Estos poseen aire acondicionado y anuncio sonoro. <br/>Por formación se utilizan 2 coches aunque se pueden anexar hasta dos formaciones. <br/>La apertura de puertas es accionada por el usuario y la alarma de cierre es de 1 segundo. ", 
+		"available": true, 
+		"provisory": true, 
 		"state": "not available", 
 		"locomotivepark": false, 
-		"cover": false
+		"cover": false,
+		"downloads": [
+			{"year": 2016, "month": "Julio", "file": "lineaTrenDeLaCosta.csv"}
+		]
 	}
 ]

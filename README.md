@@ -22,6 +22,13 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.1
+* Line: Soporte de tabla actual y de meses anteriores. 
+* General: Fixeos varios. 
+
+## v2.0.0.3
+* Line: Agregado parcial del soporte de multitabla. 
+
 ## v2.0.0.2
 * General: Dependencias actualizadas. 
 * Home: Fix de soporte de flota provisoria en ferrocarriles metropolitanos. 
