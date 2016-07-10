@@ -10,6 +10,7 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"livesheet": "#", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaA-Junio2016.csv"}, 
 			{"year": 2016, "month": "Julio", "file": "lineaA.csv"}
@@ -24,11 +25,13 @@
 		"titlesection": "Flota de la Línea B", 
 		"description": "Flota conformada por coches Mitsubishi Eidan serie 500 provenientes de Japón, y por coches CAF series 5000 y 6000 provenientes del metro de Madrid, España. <br/>La cantidad de coches por formación es de 6 coches. <br/>El tiempo de aviso de cierre de puertas son de 3 segundos. <br/>El orden de los coches dispuesto en la tabla tiene al 1er coche mirando hacia Leandro N. Alem y el último mirando hacia Juan Manuel de Rosas. ", 
 		"available": true, 
-		"provisory": true, 
-		"state": "provisory", 
+		"provisory": false, 
+		"state": "final", 
 		"locomotivepark": false, 
+		"livesheet": "1l8iaClZ4_HmjFo8S08d5IW_z2Iy-UR-iwcqqLfbQYrg", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaB-Junio2016.csv"}, 
+			{"year": 2016, "month": "Julio", "file": "lineaB-Julio2016_01.csv"}, 
 			{"year": 2016, "month": "Julio", "file": "lineaB.csv"}
 		], 
 		"cover": [
@@ -51,6 +54,7 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"livesheet": "#", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaC-Junio2016.csv"}, 
 			{"year": 2016, "month": "Julio", "file": "lineaC.csv"}
@@ -70,9 +74,11 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"livesheet": "1EqGbnNijXbTEuOFvf3eFZkbj_vjkXv-nVCxLzSh842A", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaD-Junio2016.csv"}, 
 			{"year": 2016, "month": "Julio Semana 01", "file": "lineaD-Julio2016_01.csv"}, 
+			{"year": 2016, "month": "Julio Semana 02", "file": "lineaD-Julio2016_02.csv"}, 
 			{"year": 2016, "month": "Julio", "file": "lineaD.csv"}
 		], 
 		"cover": [
@@ -107,6 +113,7 @@
 		"provisory": false, 
 		"state": "final", 
 		"locomotivepark": false, 
+		"livesheet": "10hn6Sf7AbV3GVOcNv0bv8PF6S1VvQDg8TRp-lwciLDM", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaH-Junio2016.csv"}, 
 			{"year": 2016, "month": "Julio Semana 01", "file": "lineaH-Julio2016_01.csv"}, 

@@ -16,3 +16,6 @@
 		.navbar #responsivemenu li{width: inherit; margin-left: 1rem}
 		.navbar #responsivemenu ul li.nav-item+.nav-item {margin-left: 1rem}
 	}
+
+/* Jumbotron pic center for parallax */
+.jumbotron-container{background-position: inherit; background-position-x: center}

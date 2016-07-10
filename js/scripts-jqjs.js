@@ -27,5 +27,12 @@ function checkwidth(){
 	};
 };
 
+$(window).scroll(function(){
+	var posicion =  ($(window).scrollTop() * 0.50);	
+	$('.jumbotron-container').css({
+		'background-position': 'center -' + posicion + 'px',
+	});
+});
+
 $(document).ready(checkwidth()); 
 $(window).resize(function(){checkwidth()});

@@ -1,0 +1,27 @@
+Formación,Serie,Composición,1,2,3,4,5,6,Esquema,Estado,¿AA?,Tipo de iluminación
+A,Alstom Metropolis,Triplas,Rca101,M101,Mp101,Mp102,M122,Rcb101,Metrovías metalizado (mod SBASE),Reparado,Si,LED de tonos cálidos
+B,Alstom Metropolis,Triplas,Rca102,M102,Mp103,Mp104,M103,Rcb102,Metrovías metalizado (mod SBASE),Reparado,Si,LED de tonos fríos
+D,Alstom Metropolis,Triplas,Rca104,M104,Mp107,Mp108,M125,Rcb104,Metrovías metalizado (mod SBASE),Reparado,Si,LED de tonos cálidos
+E,Alstom Metropolis,Triplas,Rca105,M119,Mp109,Mp110,M132,Rcb105,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+F,Alstom Metropolis,Triplas,Rca106,M106,Mp111,Mp112,M105,Rcb106,Metrovías metalizado (mod SBASE),Reparado,Si,LED de tonos cálidos
+G,Alstom Metropolis,Triplas,Rca107,M107,Mp113,Mp114,M126,Rcb107,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+H,Alstom Metropolis,Triplas,Rca108,M108,Mp115,Mp116,M128,Rcb108,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+I,Alstom Metropolis,Triplas,Rca109,M109,Mp117,Mp118,M129,Rcb109,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+J,Alstom Metropolis,Triplas,Rca110,M110,Mp119,Mp120,M130,Rcb110,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+J,Fiat Materfer,Duplas,37A,37B,18A,18B,2A,2B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+K,Alstom Metropolis,Triplas,Rca111,M111,Mp121,Mp132,M131,Rcb111,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+L,Alstom Metropolis,Triplas,Rca112,M112,Mp123,Mp124,M117,Rcb112,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+L,Fiat Materfer,Duplas,26A,26B,25A,25B,29A,29B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+M,Alstom Metropolis,Triplas,Rca113,M113,Mp125,Mp126,M118,Rcb113,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+M,Fiat Materfer,Duplas,1A,1B,11A,11B,7A,7B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+N,Alstom Metropolis,Triplas,Rca114,M115,Mp127,Mp128,M114,Rcb114,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+N,Fiat Materfer,Triplas,35A,4C,35B,17A,14C,17B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+O,Alstom Metropolis,Triplas,Rca115,M127,Mp129,Mp130,M120,Rcb115,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+P,Alstom Metropolis,Triplas,Rca116,M116,Mp131,Mp106,M121,Rcb116,Metrovías metalizado (mod SBASE),Original,No,Tubo fluorescente
+Q,Fiat Materfer,Triplas,22A,1C,22B,23A,15C,23B,Bicentenario,Original,No,Tubo fluorescente
+S,Fiat Materfer,Triplas,39A,13C,39B,36A,6C,36B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+T,Fiat Materfer,Duplas,3A,3B,6A,6B,15A,15B,Metrovías (mod SBASE),Original,No,Tubo fluorescente
+U,Fiat Materfer,Triplas,40A,7C,40B,41A,12C,41B,Desconocido,Original,No,Tubo fluorescente
+V,Fiat Materfer,Duplas,8A,8B,38A,38B,32A,32B,Metrovías (mod SBASE),Reparado,No,Tubo fluorescente
+Y,Fiat Materfer,Triplas,10A,9C,10B,42A,3C,42B,Esquema original,Original,No,Tubo fluorescente
+Z,Fiat Materfer,Duplas,33A,33B,21A,21B,34A,34B,Bicentenario y Metrovías (en dupla central),Original,No,Tubo fluorescente

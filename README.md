@@ -22,6 +22,10 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.0.1.1 
+* General: Animación parallax del cover. 
+* General: Incorporación de Google Tag Manager para registro estadístico del sitio. 
+
 ## v2.0.1
 * Line: Soporte de tabla actual y de meses anteriores. 
 * General: Fixeos varios. 

@@ -1,29 +1,36 @@
-Formación,Serie,Composición,1,2,3,4,5,6,Esquema,¿Reparado?,¿AA?
-A,Mitsubishi Eidan,Sextuplas,661,756,779,780,755,680,Metrovías,Original,No
-C,Mitsubishi Eidan,Sextuplas,789,736,725,801,739,780,De fábrica,Original,No
-D,Mitsubishi Eidan,Sextuplas,797,784,781,798,802,782,De fábrica y SBASE v0.5 (sólo 784),Original,No
-E,Mitsubishi Eidan,Sextuplas,759,760,749,750,715,716,SBASE v0.5,Original,No
-G,Mitsubishi Eidan,Sextuplas,689,679,799,690,678,676,De fábrica,Original,No
-H,Mitsubishi Eidan,Sextuplas,641,774,761,762,773,708,SBASE v0.5,Original,No
-I,Mitsubishi Eidan,Sextuplas,657,311,703,590,310,770,De fábrica,Original,No
-K,Mitsubishi Eidan,Sextuplas,669,325,787,602,315,620,SBASE v1,Reparado,No
-L,Mitsubishi Eidan,Sextuplas,765,766,639,640,647,648,Metrovías,Original,No
-M,Mitsubishi Eidan,Sextuplas,777,711,775,650,712,776,Metrovías,Original,No
-N,Mitsubishi Eidan,Sextuplas,731,304,737,738,656,732,De fábrica,Original,No
-O,Mitsubishi Eidan,Sextuplas,735,767,768,745,754,696,De fábrica y SBASE v0.5 (sólo 745),Original,No
-P,Mitsubishi Eidan,Sextuplas,793,593,795,794,634,796,SBASE v1,Reparado,No
-Q,Mitsubishi Eidan,Sextuplas,741,907,785,786,908,724,De fábrica,Original,No
-S,Mitsubishi Eidan,Sextuplas,637,913,914,909,910,740,De fábrica,Original,No
-T,Mitsubishi Eidan,Sextuplas,653,744,700,729,719,720,De fábrica,Original,No
-V,CAF 5000,Duplas,5037,5048,5015,5016,5025,5026,Metrovías (mod SBASE),Original,No
-W,CAF 5000,Duplas,5037,5038,5027,5028,5003,5004,Metrovías (mod SBASE),Original,No
-Y,CAF 5000,Duplas,5013,5014,5045,5046,5021,5022,Metrovías (mod SBASE),Original,No
-A1,CAF 6000,Duplas,6011,6012,6013,6014,6047,6048,SBASE v1,Original,Si
-B1,CAF 6000,Duplas,6032,6031,6040,6039,6028,6027,SBASE v1,Original,Si
-C1,CAF 6000,Duplas,6017,6018,6003,6004,6015,6016,SBASE v1,Original,Si
-D1,CAF 6000,Duplas,6065,6066,6019,6020,6007,6008,SBASE v1,Original,Si
-F1,CAF 6000,Duplas,6063,6064,6057,6058,6067,6068,SBASE v1,Original,Si
-H1,CAF 6000,Triplas,6051,6451,6052,6045,6445,6046,SBASE v1,Original,Si
-I1,CAF 6000,Duplas,6029,6030,6001,6002,6023,6024,SBASE v1,Original,Si
-J1,CAF 6000,Duplas,6053,6054,6025,6026,6005,6006,SBASE v1,Original,Si
-Z1,CAF 5000,Duplas,5067,5068,5072,5071,5105,5106,Metrovias (mod SBASE),Original,Si
+Formación,Serie,Composición,1,2,3,4,5,6,Estado funcional,Estado integral,¿AA?,Esquema
+A,Mitsubishi Eidan,Sextuplas,661,756,779,780,755,680,Operativo,Original,No,Metrovías
+B,Mitsubishi Eidan,Sextuplas,721,623,726,691,698,800,Desafectado,Original,No,De fábrica
+C,Mitsubishi Eidan,Sextuplas,789,736,725,801,739,780,Operativo,Original,No,De fábrica
+D,Mitsubishi Eidan,Sextuplas,797,784,781,798,802,782,Operativo,Original,No,De fábrica y SBASE v0.5 (sólo 784)
+E,Mitsubishi Eidan,Sextuplas,759,760,749,750,715,716,Operativo,Original,No,SBASE v0.5
+F,Mitsubishi Eidan,Sextuplas,697,917,903,904,918,624,Desarmado,Original,No,De fábrica
+G,Mitsubishi Eidan,Sextuplas,689,679,799,690,678,676,Operativo,Original,No,De fábrica
+H,Mitsubishi Eidan,Sextuplas,641,774,761,762,773,708,Operativo,Original,No,SBASE v0.5
+I,Mitsubishi Eidan,Sextuplas,657,311,703,590,310,770,Operativo,Original,No,De fábrica
+J,Mitsubishi Eidan,Sextuplas,788,687,634,787,593,633,Devuelto a Japón/Desafectado,Original,No,De fábrica
+K,Mitsubishi Eidan,Sextuplas,669,325,787,602,315,620,Operativo,Reparado,No,SBASE v1
+L,Mitsubishi Eidan,Sextuplas,765,766,639,640,647,648,Operativo,Original,No,Metrovías
+M,Mitsubishi Eidan,Sextuplas,777,711,775,650,712,776,Operativo,Original,No,Metrovías
+N,Mitsubishi Eidan,Sextuplas,731,304,737,738,656,732,Operativo,Original,No,De fábrica
+O,Mitsubishi Eidan,Sextuplas,735,767,768,745,754,696,Operativo,Original,No,De fábrica y SBASE v0.5 (sólo 745)
+P,Mitsubishi Eidan,Sextuplas,793,593,795,794,634,796,Operativo,Reparado,No,SBASE v1
+Q,Mitsubishi Eidan,Sextuplas,741,907,785,786,908,724,Operativo,Original,No,De fábrica
+R,Mitsubishi Eidan,Sextuplas,328,745,746,784,783,306,Desarmado,Original,No,De fábrica
+S,Mitsubishi Eidan,Sextuplas,637,913,914,909,910,740,Operativo,Original,No,De fábrica
+T,Mitsubishi Eidan,Sextuplas,653,744,700,729,719,720,Operativo,Original,No,De fábrica
+U,Mitsubishi Eidan,Sextuplas,771,772,734,753,584,752,Desarmado,Original,No,De fábrica
+V,CAF 5000,Duplas,5047,5048,5015,5016,5025,5026,Operativo,Original,No,Metrovías (mod SBASE)
+W,CAF 5000,Duplas,5037,5038,5027,5028,5003,5004,Operativo,Original,No,Metrovías (mod SBASE)
+X,CAF 5000,Duplas,5034,5033,5009,5010,5050,5049,Operativo,Original,No,Metrovías (mod SBASE)
+Y,CAF 5000,Duplas,5013,5014,5045,5046,5021,5022,Operativo,Original,No,Metrovías (mod SBASE)
+Z,CAF 5000,Duplas,5024,5023,5076,5075,5062,5061,Operativo,Original,No,Metrovías (mod SBASE)
+A1,CAF 6000,Duplas,6011,6012,6013,6014,6047,6048,Operativo,Original,Si,SBASE v1
+B1,CAF 6000,Duplas,6032,6031,6040,6039,6028,6027,Operativo,Original,Si,SBASE v1
+C1,CAF 6000,Duplas,6017,6018,6003,6004,6015,6016,Operativo,Original,Si,SBASE v1
+D1,CAF 6000,Duplas,6065,6066,6019,6020,6007,6008,Operativo,Original,Si,SBASE v1
+F1,CAF 6000,Duplas,6063,6064,6057,6058,6067,6068,Operativo,Original,Si,SBASE v1
+H1,CAF 6000,Triplas,6051,6451,6052,6045,6445,6046,Operativo,Original,Si,SBASE v1
+I1,CAF 6000,Duplas,6029,6030,6001,6002,6023,6024,Operativo,Original,Si,SBASE v1
+J1,CAF 6000,Duplas,6053,6054,6025,6026,6005,6006,Operativo,Original,Si,SBASE v1
+Z1,CAF 5000,Duplas,5067,5068,5072,5071,5105,5106,Operativo,Original,Si,Metrovias (mod SBASE)
