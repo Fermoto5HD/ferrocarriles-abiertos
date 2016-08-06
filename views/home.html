@@ -1,18 +1,13 @@
 <section class="jumbotron-container" style="background-image: url(img/jumbotron/home/01.jpg)">
-	<div class="breadcrumb-container">
-		<div class="container">
-			<ol class="breadcrumb">
-				<li><a href="/">Fermoto5HD</a></li>
-				<li><a href="/portfolio">Portfolio</a></li>
-				<li class="active">Flota Ferroviaria</li>
-			</ol>
-		</div>
-	</div>
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Flota Ferroviaria</h1>
+			<h1>El ferrocarril avanza, los datos también.</h1>
+			<p>Ahora el proyecto abarcará más aspectos, por lo tanto el proyecto pasó de ser "Flota Ferroviaria" a ser "Ferrocarriles Abiertos", un proyecto que ya tenía en mente realizarlo pero que no sabía cómo comenzarlo. </p>
+			<p>Los relevamientos estarán disponibles dentro de la sección "Flota Ferroviaria". </p>
+			<p>¡Disfrutalo!</p>
+			<!--<h1>Flota Ferroviaria</h1>
 			<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
-			<p>Estos datos fueron relevados parcialmente por mí, tanto en persona como por los datos de varios videos en YouTube e información en Facebook y páginas de Internet (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>
+			<p>Estos datos fueron relevados parcialmente por mí, tanto en persona como por los datos de varios videos en YouTube e información en Facebook y páginas de Internet (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>-->
 		</div>
 	</div>
 	<div class="breadcrumb-container" id="jumbotron-caption">
@@ -25,42 +20,31 @@
 </section>
 <section>
 	<br>
-	<div class="container" ng-controller="listRailways">
-		<h1>Subterráneos de Buenos Aires + Premetro</h1>
-		<p>Explotada por Metrovías S.A. y en parte por Subterráneos de Buenos Aires Sociedad del Estado, cuenta con 6 líneas de subte (A, B, C, D, E y H), y con un Premetro (línea E2).</p>
+	<div class="container">
 		<div class="row text-xs-center">
-			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'subway'}">
+			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-header">
-						<h2>{{line.hometitle}}</h2>
+						<h2>Estaciones</h2>
 					</div>
 					<div class="card-block">
-						<p>{{line.homedescription}} </p>
+						<p>Datos de las estaciones, desde las dimensiones hasta los componentes de infraestructura y servicios disponibles.</p>
 					</div>
 					<div class="card-footer">
-						<a ng-if="line.available && line.provisory === false" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
-						<a ng-if="line.available && line.provisory" href="#/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
-						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
+						<a href="#/estaciones" class="btn btn-danger disabled">Ver datasets</a>
 					</div>
 				</div>
 			</div>
-		</div>
-		<br/>
-		<h1>Ferrocarriles metropolitanos</h1>
-		<p>Explotados en su mayoría por Trenes Argentinos (Operadora Ferroviaria Sociedad del Estado) exceptuando las líneas Urquiza y Belgrano Norte que son explotadas por Metrovías S.A. y Ferrovías S.A. respectivamente.</p>
-		<div class="row text-xs-center">
-			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'railway'}">
+			<div class="col-sm-6">
 				<div class="card">
 					<div class="card-header">
-						<h2>{{line.hometitle}}</h2>
+						<h2>Flota Ferroviaria</h2>
 					</div>
 					<div class="card-block">
-						<p>{{line.homedescription}} </p>
+						<p>Datos de las formaciones, desde la composición hasta el estado funcional e integral de la misma.</p>
 					</div>
 					<div class="card-footer">
-						<a ng-if="line.available && line.provisory === false" href="#/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
-						<a ng-if="line.available && line.provisory" href="#/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
-						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
+						<a href="#/flota-ferroviaria" class="btn btn-primary">Ver datasets</a>
 					</div>
 				</div>
 			</div>

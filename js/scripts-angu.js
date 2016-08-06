@@ -1,4 +1,4 @@
-var app = angular.module('flota-ferroviaria', ['ngRoute', 'ngSanitize', 'angularMoment']);
+var app = angular.module('ferrocarriles-abiertos', ['ngRoute', 'ngSanitize', 'angularMoment']);
 var token = ""; 
 app
 	.run(function(amMoment) {
@@ -10,12 +10,31 @@ app
 			templateUrl:'views/home.html',
 			controller: 'mainctrl'
 		})
+		.when('/flota-ferroviaria',{ 
+			templateUrl:'views/gathered-trains/main.html'
+		})
+		.when('/flota-ferroviaria/linea',{ 
+			redirectTo: '/flota-ferroviaria/'
+		})
+		.when('/flota-ferroviaria/linea/:line',{ 
+			templateUrl:'views/gathered-trains/line.html',
+			controller: 'gathered_line'
+		})
+		.when('/estaciones',{ 
+			templateUrl:'views/stations/main.html'
+		})
+		.when('/estaciones/linea',{ 
+			redirectTo: '/estaciones/'
+		})
+		.when('/estaciones/linea/:line',{ 
+			templateUrl:'views/stations/line.html',
+			controller: 'stations_line'
+		})
 		.when('/linea',{ 
-			redirectTo: '/'
+			redirectTo: '/flota-ferroviaria/'
 		})
 		.when('/linea/:line',{ 
-			templateUrl:'views/line.html',
-			controller: 'line'
+			redirectTo: '/flota-ferroviaria/linea/:line'
 		})
 		.when('/about',{ 
 			templateUrl:'views/about.html'
@@ -91,7 +110,7 @@ app
 		console.log('Default'); 
 		//$scope.agregar = function(){};
 	})
-	.controller('line', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
+	.controller('gathered_line', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
 		var randomresult = undefined; 
 		var onlyone = 0; 
 		$scope.line = $routeParams.line; 
@@ -129,6 +148,84 @@ app
 		});
 		$scope.loadCSV = function(file){
 			$http.get('data/'+file).success(function(allText, status, headers){
+				var allTextLines = allText.split(/\r\n|\n/);
+				var heads = allTextLines[0].split(',');
+				var tablehead = [];
+				var lines = [];
+
+				for ( var i = 0; i < allTextLines.length; i++) {
+					// split content based on comma
+					var data = allTextLines[i].split(',');
+					if (i === 0) {
+						if (data.length == heads.length) {
+							var tarr = [];
+							for ( var j = 0; j < heads.length; j++) {
+								tarr.push(data[j]);
+							}
+							tablehead.push(tarr);
+						}
+					} else {
+						if (data.length == heads.length) {
+							var tarr = [];
+							for ( var j = 0; j < heads.length; j++) {
+								tarr.push(data[j]);
+							}
+							lines.push(tarr);
+						}
+					}
+					
+				}
+				$scope.thead = tablehead;
+				$scope.data = lines;
+				$scope.lastmod = headers()['last-modified']; 
+			});
+		}
+		$scope.randomize = function(datalength) {
+			if (randomresult === undefined) {
+				randomresult = Math.floor(Math.random()*datalength); 
+			} 
+			return randomresult;
+		}; 
+	}])
+
+	.controller('stations_line', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
+		var randomresult = undefined; 
+		var onlyone = 0; 
+		$scope.line = $routeParams.line; 
+		$http.get('data/stations/linea'+$routeParams.line+'.csv').success(function(allText, status, headers){
+			var allTextLines = allText.split(/\r\n|\n/);
+			var heads = allTextLines[0].split(',');
+			var tablehead = [];
+			var lines = [];
+
+			for ( var i = 0; i < allTextLines.length; i++) {
+				// split content based on comma
+				var data = allTextLines[i].split(',');
+				if (i === 0) {
+					if (data.length == heads.length) {
+						var tarr = [];
+						for ( var j = 0; j < heads.length; j++) {
+							tarr.push(data[j]);
+						}
+						tablehead.push(tarr);
+					}
+				} else {
+					if (data.length == heads.length) {
+						var tarr = [];
+						for ( var j = 0; j < heads.length; j++) {
+							tarr.push(data[j]);
+						}
+						lines.push(tarr);
+					}
+				}
+				
+			}
+			$scope.thead = tablehead;
+			$scope.data = lines;
+			$scope.lastmod = headers()['last-modified']; 
+		});
+		$scope.loadCSV = function(file){
+			$http.get('data/stations/'+file).success(function(allText, status, headers){
 				var allTextLines = allText.split(/\r\n|\n/);
 				var heads = allTextLines[0].split(',');
 				var tablehead = [];
@@ -246,6 +343,11 @@ app
 				$http.get('data/railways.json').success(function(data){
 					callback(data);
 				});
+			}, 
+			listStations: function(callback) {
+				$http.get('data/stations/railways.json').success(function(data){
+					callback(data);
+				});
 			}
 		};
 	}])
@@ -301,5 +403,12 @@ app
 		$scope.JSONlines = []; 
 		fact_listRailways.listRailways(function(data) {
 			$scope.JSONlines = data;
+		});
+	}])
+	.controller('listStations', ['$scope', 'fact_listRailways', function ($scope, fact_listRailways) {
+		$scope.test = "Test"; 
+		$scope.JSONstations = []; 
+		fact_listRailways.listStations(function(data) {
+			$scope.JSONstations = data;
 		});
 	}]); 

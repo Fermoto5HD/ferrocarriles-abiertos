@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="flota-ferroviaria">
+<html ng-app="ferrocarriles-abiertos">
 	<head>
-		<title>Flota Ferroviaria</title>
+		<title>Ferrocarriles Abiertos</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -12,7 +12,7 @@
 		<meta name="msapplication-TileColor" content="#282828">
 		<!-- Add to homescreen for Chrome on Android -->
 		<meta name="mobile-web-app-capable" content="no">
-		<meta name="application-name" content="Flota Ferroviaria">
+		<meta name="application-name" content="Ferrocarriles Abiertos">
 		<link rel="icon" sizes="192x192" href="vendor/fm5strap/img/touch/chrome-touch-icon-192x192.png">
 		<!-- Add to homescreen for Safari on iOS -->
 		<meta name="apple-mobile-web-app-capable" content="no">
@@ -55,7 +55,7 @@
 		<header>
 			<nav class="navbar navbar-fixed-top">
 				<div class="container">
-					<a class="navbar-brand" href="#/" title="Fernando Javier Osorio Lorenzo"></a>
+					<a class="navbar-brand" href="#/" title="Ferrocarriles Abiertos"></a>
 					<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
 					<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm" id="responsivemenu">
 						<li class="nav-item">
@@ -67,7 +67,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="menu-responsive-subway">
 								<span ng-repeat="line in JSONlines | filter:{type:'subway'}">
-									<a ng-if="line.available" href="#/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+									<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
 									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
 								</span>
 							</div>
@@ -78,7 +78,7 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="menu-responsive-railway">
 								<span ng-repeat="line in JSONlines | filter:{type:'railway'}">
-									<a ng-if="line.available" href="#/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+									<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
 									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
 								</span>
 							</div>
@@ -98,7 +98,7 @@
 			<div class="container">
 				<div class="col-md-6">
 					<h4>Sobre el sitio</h4>
-					<p>Licenciado bajo Creative Commons Atribución Internacional 4.0 (CC-BY-4.0)</p>
+					<p>Iniciativa de <a href="http://Fermoto5HD.16mb.com/">Fermoto5HD</a>. Proyecto licenciado bajo Creative Commons Atribución Internacional 4.0 (CC-BY-4.0)</p>
 					<h4>Recursos utilizados</h4>
 					<ul>
 						<li>FM5strap</li>

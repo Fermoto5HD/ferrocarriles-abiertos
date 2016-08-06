@@ -1,9 +1,9 @@
-# Flota Ferroviaria
-Este es un proyecto personal el cual reúne las características y composiciones de las formaciones de la flota ferroviaria del Area Metropolitana de Buenos Aires. 
+# Ferrocarriles Abiertos
+Este es un proyecto personal el cual reúne las características y composiciones de los diferentes lugares y activos de los ferrocarriles del Area Metropolitana de Buenos Aires. 
 Estos datos se van a ir actualizando conforme a los cambios que se vayan realizando en el ámbito ferroviario. 
 
-## Sobre la v2.x.x 
-Esta versión es una reescritura total del proyecto, ya que decidí no mantener más la base en Polymer (v1.x.x), dado a la dificultad del uso y manejo de los elementos como iron-ajax, que dió mucho problema al querer pasar archivos CSV por parámetro. 
+## Sobre el rebranding
+En esta etapa decido realizar un rebranding grande, ya que decidí comenzar a abarcar otras áreas como son las estaciones ferroviarias, entre más datos que podrían llegar a ser de interés. 
 
 ## ¿Qué tengo que hacer para ejecutarlo sin errores? 
 * Montarlo en xampp o correrlo con ruby. 
@@ -22,6 +22,10 @@ Esta versión es una reescritura total del proyecto, ya que decidí no mantener 
 * Tether 
 
 #Changelog
+## v2.1.0.0 
+* General: Readaptación del proyecto. Flota Ferroviaria pasa a ser una sección del proyecto. 
+* Data: Carga de csv de prueba, con datos de la Línea B. 
+
 ## v2.0.1.1 
 * General: Animación parallax del cover. 
 * General: Incorporación de Google Tag Manager para registro estadístico del sitio. 

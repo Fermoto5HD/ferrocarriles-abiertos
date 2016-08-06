@@ -1,0 +1,68 @@
+<section class="jumbotron-container" style="background-image: url(img/jumbotron/home/01.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li class="active">Estaciones</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Estaciones</h1>
+			<p>Acá podrás conocer los diferentes aspectos de las estaciones de cada línea ferroviaria en Buenos Aires. </p>
+			<p>En esta primera etapa sólo se abarcarán pocas líneas debido a mi limitado tiempo disponible. </p>
+		</div>
+	</div>
+	<div class="breadcrumb-container" id="jumbotron-caption">
+		<div class="container">
+			<div class="breadcrumb">
+				<i class="fa fa-picture-o" aria-hidden="true"></i> Estación Ramos Mejía | Línea Sarmiento | Foto de Franco Daniel, tomada el 29 de mayo de 2016.</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+	<br>
+	<div class="container" ng-controller="listRailways">
+		<h1>Subterráneos de Buenos Aires + Premetro</h1>
+		<p>Explotada por Metrovías S.A. y en parte por Subterráneos de Buenos Aires Sociedad del Estado, cuenta con 6 líneas de subte (A, B, C, D, E y H), y con un Premetro (línea E2).</p>
+		<div class="row text-xs-center">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'subway'}">
+				<div class="card">
+					<div class="card-header">
+						<h2>{{line.hometitle}}</h2>
+					</div>
+					<div class="card-block">
+						<p>{{line.homedescription}} </p>
+					</div>
+					<div class="card-footer">
+						<a ng-if="line.available && line.provisory === false" href="#/estaciones/linea/{{line.line}}" class="btn btn-primary">Ver relevamiento</a>
+						<a ng-if="line.available && line.provisory" href="#/estaciones/linea/{{line.line}}" class="btn btn-warning">Ver relevamiento</a>
+						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<h1>Ferrocarriles metropolitanos</h1>
+		<p>Explotados en su mayoría por Trenes Argentinos (Operadora Ferroviaria Sociedad del Estado) exceptuando las líneas Urquiza y Belgrano Norte que son explotadas por Metrovías S.A. y Ferrovías S.A. respectivamente.</p>
+		<div class="row text-xs-center">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'railway'}">
+				<div class="card">
+					<div class="card-header">
+						<h2>{{line.hometitle}}</h2>
+					</div>
+					<div class="card-block">
+						<p>{{line.homedescription}} </p>
+					</div>
+					<div class="card-footer">
+						<a ng-if="line.available && line.provisory === false" href="#/estaciones/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory" href="#/estaciones/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
+						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

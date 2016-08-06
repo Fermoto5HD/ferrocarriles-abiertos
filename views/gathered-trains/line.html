@@ -1,0 +1,129 @@
+<div ng-controller="listRailways">
+	<section ng-repeat="linedata in JSONlines | filter:{line: line}:true">
+		<div ng-if="linedata.cover !== false" class="jumbotron-container" style="background-image: url(img/jumbotron/{{linedata.cover[randomize(linedata.cover.length)].file}})">
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><a href="#/">Ferrocarriles Abiertos</a></li>
+						<li><a href="#/flota-ferroviaria">Flota Ferroviaria</a></li>
+						<li class="active">{{linedata.hometitle}}</li>
+					</ol>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1>{{linedata.titlesection}}</h1>
+					<p ng-bind-html="linedata.description"></p>
+				</div>
+			</div>
+			<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
+				<div class="container">
+					<div class="breadcrumb">
+						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}
+					</div>
+				</div>
+			</div>
+			<!-- -->
+			<div class="modal fade" id="md-viewpic" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h2 class="modal-title">Imagen</h2>
+						</div>
+						<div class="modal-body">
+							<img class="img-thumbnail" src="img/jumbotron/{{linedata.cover[randomize(linedata.cover.length)].file}}">
+							<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}</figcaption>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="jumbotron-container" ng-if="linedata.cover === false">
+			<div class="breadcrumb-container">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li><a href="#/">Ferrocarriles Abiertos</a></li>
+						<li><a href="#/flota-ferroviaria">Flota Ferroviaria</a></li>
+						<li class="active">{{linedata.hometitle}}</li>
+					</ol>
+				</div>
+			</div>
+			<div class="jumbotron">
+				<div class="container">
+					<h1>{{linedata.titlesection}}</h1>
+					<p ng-bind-html="linedata.description"></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section style="padding-top: 40px;">
+		<div class="container">
+			<div ng-controller="listRailways">
+				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true">
+					<span ng-if="linedata.downloads.length > 1">
+						<!--<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+						<!--<span ng-if="linedata.downloads.length > 0">-->
+							<span ng-repeat="item in linedata.downloads | reverse">
+								<a ng-if="$index === 0" class="btn btn-primary" ng-click="loadCSV(item.file)">Último relevamiento ({{item.month}} {{item.year}})</a>
+								<!--<a ng-if="$index < linedata.downloads.length - 1" class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+								<!--<a class="btn btn-secondary" ng-click="loadCSV(item.file)">{{item.year}} | {{item.month}}</a>-->
+							</span>
+							<div class="btn-group">
+								<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Relevamientos anteriores
+								</button>
+								<div class="dropdown-menu">
+									<a ng-repeat="item in linedata.downloads | reverse" ng-if="$index > 0" class="dropdown-item" ng-click="loadCSV(item.file)" style="cursor: pointer">{{item.year}} | {{item.month}}</a>
+								</div>
+							</div>
+						<!--</span>-->
+					</span>
+				</span>
+			</div>
+			<br/>
+			<br/>
+			<div class="h3"><strong>Última modificación: </strong><span am-time-ago="lastmod" title="Modificado el {{lastmod | amUtcOffset:'-0300' | amDateFormat:'MM/DD/YYYY HH:mm:ss'}}"></span></div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="linefilter" placeholder="Buscar en la tabla (formaciones, coches, etc...)">
+			</div>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr ng-repeat="x in thead">
+							<td ng-repeat="y in x">{{ y }}</td>
+						</tr>
+					</thead>
+					<tr ng-repeat="x in data | filter:linefilter">
+						<td ng-repeat="y in x track by $index">{{ y }}</td>
+					</tr>
+				</table>
+			</div>
+			<div ng-controller="listRailways">
+				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true" class="btn-group">
+					<div class="btn-group">
+						<a ng-repeat="item in linedata.downloads" ng-if="$index === linedata.downloads.length - 1" class="btn btn-primary" href="data/{{item.file}}">Descargar CSV ({{item.month}} {{item.year}})</a>
+						<button ng-if="linedata.downloads.length > 1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="sr-only">Historial</span>
+						</button>
+						<div ng-if="linedata.downloads.length > 1" class="dropdown-menu">
+							<span ng-repeat="item in linedata.downloads">
+								<a ng-if="$index < linedata.downloads.length - 1" class="dropdown-item" href="data/{{item.file}}">{{item.year}} | {{item.month}}</a>
+							</span>
+						</div>
+					</div>
+				</span>
+			</div>
+			<hr>
+			<div class="text-xs-center">
+				<h3>¿Tenés información para agregar o corregir? ¡Contactate conmigo!</h3>
+				<a class="btn btn-primary btn-lg" nohref data-toggle="modal" data-target="#md-feedback">Ayudame a mantenerlo actualizado</a>
+			</div>
+		</div>
+	</section>
+</div>
