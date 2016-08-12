@@ -61,38 +61,55 @@
 						<li class="nav-item">
 							<a class="nav-link" href="#/">Inicio</a>
 						</li>
-						<li class="nav-item btn-group" ng-controller="listRailways">
+						<li class="nav-item btn-group">
+							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-datasets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Datasets
+							</a>
+							<div class="dropdown-menu" aria-labelledby="menu-responsive-datasets">
+								<a class="dropdown-item" href="#/estaciones">Estaciones</a>
+								<a class="dropdown-item" href="#/estaciones">Flota Ferroviaria</a>
+							</div>
+						</li>
+						<!--<li class="nav-item btn-group" ng-controller="listRailways">
 							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-subway" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Subterráneo
+							Flota Ferroviaria
 							</a>
-							<div class="dropdown-menu" aria-labelledby="menu-responsive-subway">
-								<span ng-repeat="line in JSONlines | filter:{type:'subway'}">
-									<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
-									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
-								</span>
+							<div class="dropdown-menu" aria-labelledby="menu-responsive-subway" style="min-width: 375px">
+								<div class="row">
+									<div class="col-md-6">
+										<h6 class="dropdown-header">Subterráneo</h6>
+										<span ng-repeat="line in JSONlines | filter:{type:'subway'}">
+											<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+											<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
+										</span>
+									</div>
+									<div class="col-md-6">
+										<h6 class="dropdown-header">Ferrocarriles</h6>
+										<span ng-repeat="line in JSONlines | filter:{type:'railway'}">
+											<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
+											<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
+										</span>
+									</div>
+								</div>
 							</div>
-						</li>
-						<li class="nav-item btn-group" ng-controller="listRailways">
-							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-railway" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Ferrocarriles
-							</a>
-							<div class="dropdown-menu" aria-labelledby="menu-responsive-railway">
-								<span ng-repeat="line in JSONlines | filter:{type:'railway'}">
-									<a ng-if="line.available" href="#/flota-ferroviaria/linea/{{line.line}}" class="dropdown-item">{{line.hometitle}}</a>
-									<a ng-if="line.available === false" nohref class="dropdown-item disabled">{{line.hometitle}}</a>
-								</span>
-							</div>
+						</li>-->
+						<li class="nav-item">
+							<a class="nav-link" href="#/glosario">Glosario</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled" nohref data-toggle="modal" data-target="#md-schemas">Esquemas</a>
+							<a class="nav-link" href="#/acerca-de">Acerca de</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" nohref data-toggle="modal" data-target="#md-about">Acerca de</a>
+							<a class="nav-link" nohref data-toggle="modal" data-target="#md-feedback" style="cursor: pointer;">Feedback</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</header>
+		<div class="loading text-xs-center" ng-hide="!layout.loading" style="position: fixed; z-index: 100000; top: 0; bottom: 0; width: 100%; background-color: rgb(20, 20, 20); ">
+			<div style="margin: 0 auto; background-image: url(img/brand.svg); background-size: cover; background-position: center; max-width: 480px; height: 150px; margin-top: 20%;"></div>
+			<p class="h2">Cargando...</p>
+        </div>
 		<main class="content-w-fixed-navbar" ng-view autoscroll="true"></main>
 		<footer>
 			<div class="container">
@@ -113,75 +130,6 @@
 			</div>
 		</footer>
 
-		<div class="modal fade" id="md-about" tabindex="-1" role="dialog">
-			<div class="modal-dialog modal-lg" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h2 class="modal-title">Acerca del proyecto</h2>
-					</div>
-				<div class="modal-body">
-					<p>Ante nada, gracias por visitar este sitio.</p>
-					<p>Mi objetivo principal en este sitio era mostrar la conformación de cada formación de cada línea ferroviaria, junto con algunos detalles adicionales.</p>
-					<p>Esto nació por un problema que siempre tenía en la cabeza cada vez que terminaba de filmar una formación porque siempre me olvidaba de anotar la letra, por lo tanto empecé a hacer un relevamiento personal de la flota de cada línea, en un principio enviando cada relevamiento como mensaje de Telegram hacia mi propio número, y después volcando esos datos en una planilla de Google Sheets para exportar estos mismos datos en CSV.</p>
-					<p>Hoy por hoy es una herramienta adicional para los ferroaficionados como yo, quienes dedicamos parte de nuestro tiempo a generar un buen archivo digital sobre los ferrocarriles.</p>
-					<hr>
-					<h3>Desarrollo</h3>
-					<p>El desarrollo del proyecto se irá dando de acuerdo al tiempo que tenga libre, tanto como para relevar como para mantener el sitio en condiciones. Se irá agregando información sobre cada línea y formación con el pasar del tiempo.</p>
-					<p>Por el momento los datos se están cargando en un cierto lapso de tiempo. Seguramente en una próxima actualización del sitio podré agregar un soporte de sincronización con Google Sheets, donde guardo las planillas de las líneas y mantener la información lo más actualizada posible.</p>
-					<hr>
-					<h3>¿Puedo colaborar?</h3>
-					<p>¡Por supuesto! Tenés tres formas de hacerlo:</p>
-					<div class="list-group" id="feedback">
-						<a nohref class="list-group-item" data-toggle="modal" data-target="#md-feedback">
-							<h4 class="list-group-item-heading">Formulario de feedback</h4>
-							<p class="list-group-item-text">El método más sencillo para aportar. Podés enviar tus comentarios, sugerencias y aportes con sólo llenar un formulario.</p>
-						</a>
-						<a href="http://github.com/Fermoto5HD/flota-ferroviaria" class="list-group-item" target="_blank">
-							<h4 class="list-group-item-heading">Issue mediante GitHub</h4>
-							<p class="list-group-item-text">La opción preferida de los programadores (me incluyo). En caso que tengas que reportar una falla hacelo con el tag correspondiente.</p>
-						</a>
-						<a href="http://twitter.com/Fermoto5HD" class="list-group-item" target="_blank">
-							<h4 class="list-group-item-heading">Tweet o MP por Twitter</h4>
-							<p class="list-group-item-text">Si no sos programador te dejo una vía fácil para contactarte conmigo, sea por un tweet de 140 caracteres o, si no te alcanza, por mensaje privado.</p>
-						</a>
-						<a href="http://plus.google.com/+Fermoto5HD" class="list-group-item" target="_blank">
-							<h4 class="list-group-item-heading">Publicación en Google+</h4>
-							<p class="list-group-item-text">Y si no tenés Twitter pero usás YouTube para comentar o subir videos te invito a que publiques en mi cuenta de Google+.</p>
-						</a>
-					</div>
-					<hr>
-					<h3>Para armar esto se necesitó</h3>
-						<ul class="list-group">
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v1.5.x</span> Angular
-							</li>
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v1.5.x</span> Angular Route
-							</li>
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v1.1.6</span> FM5strap
-							</li>
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v1.2.0</span> Tether
-							</li>
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v2.12.0</span> MomentJS with locales
-							</li>
-							<li class="list-group-item">
-								<span class="label label-default label-pill pull-xs-right">v0.0.2</span> Mucho café :)
-							</li>
-						</ul>
-						<br>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="modal fade" id="md-feedback" tabindex="-1" role="dialog">
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">

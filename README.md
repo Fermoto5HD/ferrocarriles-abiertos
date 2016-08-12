@@ -22,7 +22,13 @@ En esta etapa decido realizar un rebranding grande, ya que decidí comenzar a ab
 * Tether 
 
 #Changelog
-## v2.1.0.0 
+## v2.1.0.0-alpha2
+* Estructura: Reorganización de los archivos. 
+* Secciones: Agregadas secciones de "Estaciones", "Glosario" y "Acerca de" (reemplazo del modal por una sección). 
+* Layout: Menú simplificado en "Datasets", "Glosario", "Acerca de" y "Feedback". 
+* General: Agregado loading screen. 
+
+## v2.1.0.0-alpha1
 * General: Readaptación del proyecto. Flota Ferroviaria pasa a ser una sección del proyecto. 
 * Data: Carga de csv de prueba, con datos de la Línea B. 
 

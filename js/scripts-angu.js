@@ -1,14 +1,42 @@
 var app = angular.module('ferrocarriles-abiertos', ['ngRoute', 'ngSanitize', 'angularMoment']);
 var token = ""; 
 app
-	.run(function(amMoment) {
+	.run(function($rootScope, amMoment) {
 		amMoment.changeLocale('es');
+		$rootScope.layout = {};
+		$rootScope.layout.loading = false;
+
+		 $rootScope.$on('$stateChangeStart', function () {
+		//show loading
+			$timeout(function(){
+				$rootScope.layout.loading = true;          
+			});
+		});
+		$rootScope.$on('$stateChangeSuccess', function (newVal, oldVal) {
+			if (oldVal !== newVal) {
+				$rootScope.routeClassName = $state.current.className;
+			}
+			//hide loading
+			$timeout(function(){
+				$rootScope.layout.loading = false;
+			}, 200);
+		});
+		$rootScope.$on('$stateChangeError', function () {
+			//hide loading
+			$rootScope.layout.loading = false;
+		});
 	})
 	.config(function($routeProvider){
 		$routeProvider
 		.when('/',{ 
 			templateUrl:'views/home.html',
 			controller: 'mainctrl'
+		})
+		.when('/acerca-de',{ 
+			templateUrl:'views/about.html'
+		})
+		.when('/glosario',{ 
+			templateUrl:'views/glossary.html'
 		})
 		.when('/flota-ferroviaria',{ 
 			templateUrl:'views/gathered-trains/main.html'
@@ -114,7 +142,7 @@ app
 		var randomresult = undefined; 
 		var onlyone = 0; 
 		$scope.line = $routeParams.line; 
-		$http.get('data/linea'+$routeParams.line+'.csv').success(function(allText, status, headers){
+		$http.get('data/gathered-trains/linea'+$routeParams.line+'.csv').success(function(allText, status, headers){
 			var allTextLines = allText.split(/\r\n|\n/);
 			var heads = allTextLines[0].split(',');
 			var tablehead = [];
@@ -147,7 +175,7 @@ app
 			$scope.lastmod = headers()['last-modified']; 
 		});
 		$scope.loadCSV = function(file){
-			$http.get('data/'+file).success(function(allText, status, headers){
+			$http.get('data/gathered-trains/'+file).success(function(allText, status, headers){
 				var allTextLines = allText.split(/\r\n|\n/);
 				var heads = allTextLines[0].split(',');
 				var tablehead = [];
@@ -340,7 +368,7 @@ app
 	.factory('fact_listRailways', ['$http', function($http) {
 		return {
 			listRailways: function(callback) {
-				$http.get('data/railways.json').success(function(data){
+				$http.get('data/gathered-trains/railways.json').success(function(data){
 					callback(data);
 				});
 			}, 

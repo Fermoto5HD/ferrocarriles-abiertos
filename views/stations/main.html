@@ -24,11 +24,11 @@
 </section>
 <section>
 	<br>
-	<div class="container" ng-controller="listRailways">
+	<div class="container" ng-controller="listStations">
 		<h1>Subterráneos de Buenos Aires + Premetro</h1>
 		<p>Explotada por Metrovías S.A. y en parte por Subterráneos de Buenos Aires Sociedad del Estado, cuenta con 6 líneas de subte (A, B, C, D, E y H), y con un Premetro (línea E2).</p>
 		<div class="row text-xs-center">
-			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'subway'}">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONstations | filter:{type:'subway'}">
 				<div class="card">
 					<div class="card-header">
 						<h2>{{line.hometitle}}</h2>
@@ -48,7 +48,7 @@
 		<h1>Ferrocarriles metropolitanos</h1>
 		<p>Explotados en su mayoría por Trenes Argentinos (Operadora Ferroviaria Sociedad del Estado) exceptuando las líneas Urquiza y Belgrano Norte que son explotadas por Metrovías S.A. y Ferrovías S.A. respectivamente.</p>
 		<div class="row text-xs-center">
-			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONlines | filter:{type:'railway'}">
+			<div class="col-sm-6 col-lg-4 col-xl-3" ng-repeat="line in JSONstations | filter:{type:'railway'}">
 				<div class="card">
 					<div class="card-header">
 						<h2>{{line.hometitle}}</h2>

@@ -1,6 +1,8 @@
+var winw; 
+var winh; 
 function checkwidth(){
-	var winw = window.innerWidth; 
-	var winh = window.innerHeight;
+	winw = window.innerWidth; 
+	winh = window.innerHeight;
 	console.log(winw); 
 	console.log(winh); 
 	var scroll = $(document).scrollTop(); 
@@ -28,10 +30,16 @@ function checkwidth(){
 };
 
 $(window).scroll(function(){
-	var posicion =  ($(window).scrollTop() * 0.50);	
-	$('.jumbotron-container').css({
-		'background-position': 'center -' + posicion + 'px',
-	});
+	if (winw >= 768) {
+		var posicion =  ($(window).scrollTop() * 0.50);	
+		$('.jumbotron-container').css({
+			'background-position': 'center -' + posicion + 'px'
+		});
+	} else {
+		$('.jumbotron-container').css({
+			'background-position': 'center center'
+		});
+	}
 });
 
 $(document).ready(checkwidth()); 
