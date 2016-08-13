@@ -2,7 +2,7 @@
 	<section ng-repeat="linedata in JSONlines | filter:{line: line}:true">
 		<div ng-if="linedata.cover !== false" class="jumbotron-container" style="background-image: url(img/jumbotron/{{linedata.cover[randomize(linedata.cover.length)].file}})">
 			<div class="breadcrumb-container">
-				<div class="container">
+				<div class="container-fluid">
 					<ol class="breadcrumb">
 						<li><a href="#/">Ferrocarriles Abiertos</a></li>
 						<li><a href="#/flota-ferroviaria">Flota Ferroviaria</a></li>
@@ -11,13 +11,13 @@
 				</div>
 			</div>
 			<div class="jumbotron">
-				<div class="container">
+				<div class="container-fluid">
 					<h1>{{linedata.titlesection}}</h1>
 					<p ng-bind-html="linedata.description"></p>
 				</div>
 			</div>
 			<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="breadcrumb">
 						<i class="fa fa-picture-o" aria-hidden="true"></i> {{linedata.cover[randomize(linedata.cover.length)].caption}}
 					</div>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="jumbotron-container" ng-if="linedata.cover === false">
 			<div class="breadcrumb-container">
-				<div class="container">
+				<div class="container-fluid">
 					<ol class="breadcrumb">
 						<li><a href="#/">Ferrocarriles Abiertos</a></li>
 						<li><a href="#/flota-ferroviaria">Flota Ferroviaria</a></li>
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="jumbotron">
-				<div class="container">
+				<div class="container-fluid">
 					<h1>{{linedata.titlesection}}</h1>
 					<p ng-bind-html="linedata.description"></p>
 				</div>
@@ -63,7 +63,7 @@
 		</div>
 	</section>
 	<section style="padding-top: 40px;">
-		<div class="container">
+		<div class="container-fluid">
 			<div ng-controller="listRailways">
 				<span ng-repeat="linedata in JSONlines | filter:{line: line}:true">
 					<span ng-if="linedata.downloads.length > 1">

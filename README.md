@@ -22,6 +22,11 @@ En esta etapa decido realizar un rebranding grande, ya que decidí comenzar a ab
 * Tether 
 
 #Changelog
+## v2.1.0.0-alpha3
+* Secciones: Agregada sección "APIs". 
+* Assets: Carga de dos imagenes para jumbotron. 
+* Layout: Se unifican "Datasets" y "Glosario" dentro de "Datasets y docs". 
+
 ## v2.1.0.0-alpha2
 * Estructura: Reorganización de los archivos. 
 * Secciones: Agregadas secciones de "Estaciones", "Glosario" y "Acerca de" (reemplazo del modal por una sección). 

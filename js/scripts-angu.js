@@ -38,6 +38,7 @@ app
 		.when('/glosario',{ 
 			templateUrl:'views/glossary.html'
 		})
+		// Flota Ferroviaria
 		.when('/flota-ferroviaria',{ 
 			templateUrl:'views/gathered-trains/main.html'
 		})
@@ -48,6 +49,7 @@ app
 			templateUrl:'views/gathered-trains/line.html',
 			controller: 'gathered_line'
 		})
+		// Estaciones
 		.when('/estaciones',{ 
 			templateUrl:'views/stations/main.html'
 		})
@@ -58,6 +60,22 @@ app
 			templateUrl:'views/stations/line.html',
 			controller: 'stations_line'
 		})
+		// APIs
+		.when('/APIs',{ 
+			templateUrl:'views/APIs/main.html'
+		})
+		.when('/APIs/:api',{ 
+			redirectTo: '/APIs/'
+		})
+		.when('/APIs/:api/docs',{ 
+			templateUrl:'views/APIs/docs.html',
+			controller: 'api'
+		})
+		.when('/APIs/:api/vars',{ 
+			templateUrl:'views/APIs/vars.html'
+		})
+
+		// Algunos redirects 
 		.when('/linea',{ 
 			redirectTo: '/flota-ferroviaria/'
 		})
@@ -292,6 +310,14 @@ app
 			} 
 			return randomresult;
 		}; 
+	}])
+
+
+	.controller('api', ['$http', '$scope', '$routeParams', function ($http, $scope, $routeParams) {
+		$scope.api = $routeParams.api; 
+		if ($routeParams.api === "trenesenvivo") {
+			$scope.name = "Trenes en Vivo"; 
+		} else {$scope.name = $routeParams.api}
 	}])
 
 	.controller('home', ['$http', '$scope', 'fact_youtube', function ($http, $scope, fact_youtube) {
