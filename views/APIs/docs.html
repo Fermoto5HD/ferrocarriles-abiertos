@@ -1,0 +1,75 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/trenesenvivo.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li><a href="#/APIs">APIs</a></li>
+				<li class="active">{{name}} - Documentación</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<h1>Documentación y formas de uso</h1>
+			<p>Comprendé el funcionamiento de las diferentes partes de la API y contribuí con el desarrollo de soluciones y alternativas a las aplicaciones oficiales. </p>
+		</div>
+	</div>
+	<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
+		<div class="container-fluid">
+			<div class="breadcrumb">
+				<i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com 
+			</div>
+		</div>
+	</div>
+	<!-- -->
+	<div class="modal fade" id="md-viewpic" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h2 class="modal-title">Imagen</h2>
+				</div>
+				<div class="modal-body">
+					<img class="img-thumbnail" src="img/jumbotron/trenesenvivo.jpg">
+					<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com  </figcaption>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<section style="padding-top: 40px;">
+		<div class="container-fluid">
+			<h2>Introducción y aclaraciones</h2>
+			<p>Ante nada, aclaro que esta documentación NO ES OFICIAL, es un rejunte de todo el funcionamiento que logré interpretar hasta el día de hoy. </p>
+			<p>La documentación va a comprender pocos aspectos pero escenciales que te van a ayudar a obtener datos específicos, como los minutos restantes, el destino y las paradas intermedias, número de servicio y formación, pero nada más allá de eso, ya que el resto de los datos están disponibles con otras key de acceso y son diferentes a las públicas. </p>
+			<hr>
+			<h2>¿Dónde encuentro los links, keys y demás?</h2>
+			<p>Podrás verlo en la sección de datos, acá.</p>
+			<hr>
+			<h2>Primeros tropiezos más que pasos...</h2>
+			<p>Para continuar vas a tener que utilizar PHP para realizar un bypass de conexión con los diferentes PHP de Trenes en Vivo. </p>
+			<p>¿Por qué? Esto es debido a una restricción de los CORS (Cross-origin Resource Sharing, traducido: "Recursos Compartidos de Origen Cruzado", y esto evita poder tener interacción directa con los PHP. Es por eso que vamos a hacer un bypass mediante PHP. </p>
+			<p>De todas formas es una solución a medias, ya que, para evitar los "incorrect key" erróneos que aparecerán en medio de las consultas, habrá que cargar estos PHP bypass en un VPS o Servidor Virtual Privado. </p>
+			<hr>
+			<h2>Creando el PHP Bypass</h2>
+			<p>Comencemos con esto:</p>
+			<pre>code here :)</pre>
+			<p>Acá va a realizar toda la magia necesaria para lograr conectarte con el servidor. </p>
+			<p>Luego tendrás que utilizar Javascript o PHP para utilizar los datos por separado. En este ejemplo vamos a utilizar Javascript. </p>
+			<hr>
+			<h2>Obteniendo los datos</h2>
+			<p>Para esto habrá que tener un buen dominio de Javascript y nociones básicas de JSON ya que habrá que navegar por el resultado de la consulta de PHP que hicimos con el PHP Bypass, el cual nos dió varios objetos y vectores. </p>
+			<hr>
+			<div class="text-xs-center">
+				<h2>¿Estás listo?</h2>
+				<p>Entonces continuemos con el uso de los métodos y variables.</p>
+				<a class="btn btn-primary disabled" href="#/APIs/{{api}}/vars">Ver variables</a>
+			</div>
+		</div>
+	</section>
+</div>

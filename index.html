@@ -54,7 +54,7 @@
 	<body>
 		<header>
 			<nav class="navbar navbar-fixed-top">
-				<div class="container">
+				<div class="container-fluid">
 					<a class="navbar-brand" href="#/" title="Ferrocarriles Abiertos"></a>
 					<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
 					<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm" id="responsivemenu">
@@ -62,12 +62,14 @@
 							<a class="nav-link" href="#/">Inicio</a>
 						</li>
 						<li class="nav-item btn-group">
-							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-datasets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Datasets
+							<a class="dropdown-toggle nav-link" type="button" id="menu-responsive-datasets" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+							Datasets y docs
 							</a>
 							<div class="dropdown-menu" aria-labelledby="menu-responsive-datasets">
 								<a class="dropdown-item" href="#/estaciones">Estaciones</a>
-								<a class="dropdown-item" href="#/estaciones">Flota Ferroviaria</a>
+								<a class="dropdown-item" href="#/flota-ferroviaria">Flota Ferroviaria</a>
+								<a class="dropdown-item" href="#/APIs">APIs</a>
+								<a class="dropdown-item" href="#/glosario">Glosario</a>
 							</div>
 						</li>
 						<!--<li class="nav-item btn-group" ng-controller="listRailways">
@@ -94,9 +96,6 @@
 							</div>
 						</li>-->
 						<li class="nav-item">
-							<a class="nav-link" href="#/glosario">Glosario</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="#/acerca-de">Acerca de</a>
 						</li>
 						<li class="nav-item">
@@ -112,7 +111,7 @@
         </div>
 		<main class="content-w-fixed-navbar" ng-view autoscroll="true"></main>
 		<footer>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="col-md-6">
 					<h4>Sobre el sitio</h4>
 					<p>Iniciativa de <a href="http://Fermoto5HD.16mb.com/">Fermoto5HD</a>. Proyecto licenciado bajo Creative Commons Atribución Internacional 4.0 (CC-BY-4.0)</p>
