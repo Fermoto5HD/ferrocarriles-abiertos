@@ -58,9 +58,30 @@
 			<hr>
 			<h2>Creando el PHP Bypass</h2>
 			<p>Comencemos con esto:</p>
-			<pre>code here :)</pre>
+			<pre>&lt;?php
+$ramal = 		$_GET['ramal'];
+$anden = 		$_GET['anden'];
+$cartel = 		0;
+$key = 			"NRVQjcjTUF0I30EVFBDTqdWp%23"; 
+$url = 			'http://trenes.sofse.gob.ar/v2_pg/lcd_public/ajax_arribos_andenes.php'; 
+
+$content = $url.'?ramal='.$ramal.'&anden='.$anden.'&cartel='.$cartel.'&rnd=&key='.$key;
+header("Access-Control-Allow-Origin: *");
+
+// Con esto se generará la información necesaria a utilizar. 
+$contenido = file_get_contents($content);
+echo $contenido; 
+?&gt;</pre>
 			<p>Acá va a realizar toda la magia necesaria para lograr conectarte con el servidor. </p>
-			<p>Luego tendrás que utilizar Javascript o PHP para utilizar los datos por separado. En este ejemplo vamos a utilizar Javascript. </p>
+			<h3>Identificadores de estación, ramal, etc.</h3>
+			<p>En este ejemplo los valores de identificación se realizan mediante GET (o dicho en criollo, por barra de direcciones), tanto para el ramal como para el anden, como para los valores que se requieran mencionarlos por URL. </p>
+			<h3>Key</h3>
+			<p>Para hacer los requests o pedidos de datos será necesario contar con una key. Generalmente son utilizadas en forma pública en las pantallas públicas de las estaciones. </p>
+			<h3>Url</h3>
+			<p>Esta URL es la dirección base para hacer los pedidos. Usualmente es <code>trenes.sofse.gob.ar</code>, junto con el directorio <code>/v2_pg</code> que es heredado del sistema creado en la gestión del Ministerio del Interior y Transporte.</p>
+			<p>Los archivos de datos están dispersos en varias carpetas, y hasta el momento se conocen 4 o 5 fuentes de datos dinámicos, entre ellos están <code>/v2_pg/lcd_public</code> y <code>/v2_pg/pantalla_led</code> que son los más conocidos. </p>
+			<br>
+			<p>Una vez creado el parser, tendrás que utilizar Javascript o PHP para utilizar los datos por separado. En este ejemplo vamos a utilizar Javascript. </p>
 			<hr>
 			<h2>Obteniendo los datos</h2>
 			<p>Para esto habrá que tener un buen dominio de Javascript y nociones básicas de JSON ya que habrá que navegar por el resultado de la consulta de PHP que hicimos con el PHP Bypass, el cual nos dió varios objetos y vectores. </p>
