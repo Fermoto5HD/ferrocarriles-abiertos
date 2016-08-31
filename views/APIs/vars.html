@@ -1,0 +1,138 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/trenesenvivo.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li><a href="#/APIs">APIs</a></li>
+				<li class="active">{{name}} - Variables</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<h1>Variables</h1>
+			<p>Conocé las variables que maneja la API para manejar los datos y crear tus apps. </p>
+		</div>
+	</div>
+	<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
+		<div class="container-fluid">
+			<div class="breadcrumb">
+				<i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com 
+			</div>
+		</div>
+	</div>
+	<!-- -->
+	<div class="modal fade" id="md-viewpic" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h2 class="modal-title">Imagen</h2>
+				</div>
+				<div class="modal-body">
+					<img class="img-thumbnail" src="img/jumbotron/trenesenvivo.jpg">
+					<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com  </figcaption>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<section>
+		<div class="container-fluid">
+			<h2>Keys</h2>
+			<h3 class="h4">Actual: </h3>
+			<p class="lead"><code>v%23v%23QTUNWp%23MpWR0wkj%23RhHTqVUM</code></p>
+			<h3 class="h4">Anteriores:</h3>
+			<p><code></code></p>
+		</div>
+	</section>
+	<section style="padding-top: 40px;">
+		<div class="container-fluid">
+			<h2>Estaciones</h2>
+			<div class="form-horizontal">
+				<div class="col-md-2"><strong>URL:</strong></div>
+				<div class="col-md-10"><code>http://trenes.sofse.gob.ar/v2_pg/lcd_public/ajax_arribos_andenes.php%23</code></div>
+			</div>
+			<div class="form-horizontal">
+				<div class="col-md-2"><strong>Key:</strong></div>
+				<div class="col-md-10"><code>NRVQjcjTUF0I30EVFBDTqdWp%23</code></div>
+			</div>
+			<h3>Entrega de datos</h3>
+			<p>Esta API entrega los datos en formato JSON, comenzando con dos vectores: "items" y "video".</p>
+			<pre>{
+	"items": {}, 
+	"video": {}
+}</pre>
+			<h4>Dentro de items</h4>
+			<pre>"items": {
+	"reload": Tiempo en recargar el sitio - String,
+	"demora_formacion_1": Tiempo de demora del próximo tren - String,
+	"demora_formacion_2": Tiempo de demora del siguiente tren - String,
+	"demora_formacion_3": Tiempo de demora del subsiguiente tren - String,
+	"estacion_hasta_1": Estación de destino del próximo tren - String,
+	"formacion_tipo_servicio_1": Tipo de servicio del próximo, puede ser "N", "S", "R" o "E" - String,
+	"estaciones_1": Estaciones donde se detiene el próximo tren, en caso de ser un servicio semirrápido, rápido o especial - String,
+	"formacion_tipo_servicio_2": Tipo de servicio del siguiente, puede ser "N", "S", "R" o "E" - String,
+	"estaciones_2": Estaciones donde se detiene el siguiente tren, en caso de ser un servicio semirrápido, rápido o especial - String,
+	"formacion_tipo_servicio_3": Tipo de servicio del subsiguiente, puede ser "N", "S", "R" o "E" - String,
+	"estaciones_3": Estaciones donde se detiene el subsiguiente tren, en caso de ser un servicio semirrápido, rápido o especial - String,
+	"alerta": {
+		"estado_i": La alerta se mostrará o no sólo en el lado de ida - Valores 0 y 1 - Int,
+		"estado_v": La alerta se mostrará o no sólo en el lado de vuelta - Valores 0 y 1 - Int,
+		"mensaje": Mensaje de la alerta - String,
+		"sentido": Sentido donde se mostrará la alerta - String
+	}
+}</pre>
+			<h4>Dentro de video</h4>
+			<pre>"video": {
+	"mostrar": Mostrará el video según el valor, 0 o 1 - Int,
+	"nombre": Nombre del archivo que cargará como video, generalmente local - String,
+	"duracion": Duración en milisegundos del video - String,
+	"intervalo": Intervalo de aparición del video en milisegundos - String
+}</pre>
+			<h2>Plataforma</h2>
+			<p>Esta API entrega los datos en un formato extraño, separado por guiones bajos <code>_</code>.</p>
+			<h3>Estructura de ejemplo</h3>
+			<pre>ok_11:50_2_3_11:46_RETIRO - PALERMO - CHACARITA - LA PATERNAL - VILLA DEL PARQUE - DEVOTO - SAENZ PEÑA - SANTOS LUGARES - CASEROS - EL PALOMAR - HURLINGHAM - W.C. MORRIS - BELLA VISTA - MUÑIZ - SAN MIGUEL - JOSE C. PAZ - SOL Y VERDE - PTE. DERQUI - VILLA ASTOLFI - PILAR _0_0_0__</pre>
+			<h3>Valores</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Qué es</th>
+						<th>Qué valor entrega</th>
+						<th>Qué muestra</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Estado</td>
+						<td><code>ok</code> o <code>null</code></td>
+						<td>Muestra si hay un tren en la plataforma o no. </td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Hora actual</td>
+						<td>Hora actual o <code>0</code></td>
+						<td>Muestra la hora actual de la API. </td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Hora de partida</td>
+						<td>Hora de partida o <code>0</code></td>
+						<td>Muestra la hora de partida del tren. </td>
+					</tr>
+				</tbody>
+			</table>
+</div>
