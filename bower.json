@@ -1,5 +1,5 @@
 {
-  "name": "flota-ferroviaria",
+  "name": "ferrocarriles-abiertos",
   "description": "",
   "main": "index.js",
   "authors": [
@@ -7,14 +7,14 @@
   ],
   "license": "CC-BY-4.0",
   "keywords": [
-    "flota",
-    "ferroviaria",
+    "ferrocarriles",
+    "abiertos",
     "ferrocarril",
     "Buenos",
     "Aires",
     "AMBA"
   ],
-  "homepage": "http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria",
+  "homepage": "http://Fermoto5HD.16mb.com/portfolio/ferrocarriles-abiertos",
   "private": true,
   "ignore": [
     "**/.*",

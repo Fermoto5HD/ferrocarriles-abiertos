@@ -1,6 +1,6 @@
 {
-  "name": "flota-ferroviaria",
-  "version": "2.0.0",
+  "name": "ferrocarriles-abiertos",
+  "version": "2.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fermoto5HD/flota-ferroviaria.git"
+    "url": "git+https://github.com/Fermoto5HD/ferrocarriles-abiertos.git"
   },
   "keywords": [
-    "flota",
-    "ferroviaria",
+    "ferrocarriles",
+    "abiertos",
     "ferrocarril",
     "Buenos",
     "Aires",
@@ -21,9 +21,9 @@
   "author": "Fernando Osorio (Fermoto5HD@outlook.com)",
   "license": "CC-BY-4.0",
   "bugs": {
-    "url": "https://github.com/Fermoto5HD/flota-ferroviaria/issues"
+    "url": "https://github.com/Fermoto5HD/ferrocarriles-abiertos/issues"
   },
-  "homepage": "https://github.com/Fermoto5HD/flota-ferroviaria#readme",
+  "homepage": "https://github.com/Fermoto5HD/ferrocarriles-abiertos#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-bower-task": "^0.4.0"
