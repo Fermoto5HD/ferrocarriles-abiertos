@@ -1,10 +1,10 @@
-<div class="jumbotron-container" style="background-image: url(img/jumbotron/trenesenvivo.jpg)">
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/proximotren.jpg)">
 	<div class="breadcrumb-container">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
-				<li><a href="#/">Ferrocarriles Abiertos</a></li>
-				<li><a href="#/APIs">APIs</a></li>
-				<li class="active">{{name}} - Documentación</li>
+				<li class="breadcrumb-item"><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li class="breadcrumb-item"><a href="#/APIs">APIs</a></li>
+				<li class="breadcrumb-item active">{{name}} - Documentación</li>
 			</ol>
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 	<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
 		<div class="container-fluid">
 			<div class="breadcrumb">
-				<i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com 
+				<i class="fa fa-picture-o" aria-hidden="true"></i> Webapp alternativa "Próximo Tren" por Fermoto5HD. 
 			</div>
 		</div>
 	</div>
@@ -52,6 +52,14 @@
 			<p>Los encontrás en la sección <a href="#/APIs/trenesenvivo/vars">Variables</a>.</p>
 			<hr>
 			<h2>Primeros tropiezos más que pasos...</h2>
+			<div class="alert alert-danger">
+				<strong>Update 26/09/2016 - Atención: </strong>
+				<p>El método de parsing por PHP no funcionará por el bloqueo realizado desde el framework de Codeigniter proveniente de SOFSE. </p>
+				<p>Mandame un mensaje privado por Twitter o por el feedback para pasarte un método de parseo probablemente efectivo, aunque requerirá que tengas un recurso propio contratado... no puedo ni decirlo por acá porque los dos probables responsables del bloqueo están vigilando que no publique ni acceda a los servidores de la API. </p>
+				<p>Desde el vamos, si querían que la API fuera privada lo hubieran ocultado mejor, aparte, esto no hace que choque un tren o cambie un itinerario de salida, es solo un mísero get de datos, no tengo CRUD completo, y si no quieren que sobrecargue el servidor, compren otro y punto. </p>
+				<p>De hecho, esta API tiene que ser pública así no estamos obligados a usar una app con una estética horrible y sin optimización de datos móviles (de hecho, aprendan de <a href="http://github.com/Fermoto5HD/proximo-tren">"Próximo Tren"</a>, que lo armé todo de cero y sólo usa esa API para mostrar bien los datos). </p>
+				<p>-Fermoto5HD </p>
+			</div>
 			<p>Para continuar vas a tener que utilizar PHP para realizar un bypass de conexión con los diferentes PHP de Trenes en Vivo. </p>
 			<p>¿Por qué? Esto es debido a una restricción de los CORS (Cross-origin Resource Sharing, traducido: "Recursos Compartidos de Origen Cruzado", y esto evita poder tener interacción directa con los PHP. Es por eso que vamos a hacer un bypass mediante PHP. </p>
 			<p>De todas formas es una solución a medias, ya que, para evitar los "incorrect key" erróneos que aparecerán en medio de las consultas, habrá que cargar estos PHP bypass en un VPS o Servidor Virtual Privado. </p>

@@ -1,0 +1,132 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/trenesenvivo.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li class="breadcrumb-item"><a href="#/APIs">APIs</a></li>
+				<li class="breadcrumb-item active">{{name}} - Documentación</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<h1>Documentación y formas de uso</h1>
+			<p>Comprendé el funcionamiento de las diferentes partes de la API y contribuí con el desarrollo de soluciones y alternativas a las aplicaciones oficiales. </p>
+		</div>
+	</div>
+	<div class="breadcrumb-container" id="jumbotron-caption" data-toggle="modal" data-target="#md-viewpic" style="cursor: pointer; margin-bottom: 0">
+		<div class="container-fluid">
+			<div class="breadcrumb">
+				<i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com 
+			</div>
+		</div>
+	</div>
+	<!-- -->
+	<div class="modal fade" id="md-viewpic" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h2 class="modal-title">Imagen</h2>
+				</div>
+				<div class="modal-body">
+					<img class="img-thumbnail" src="img/jumbotron/trenesenvivo.jpg">
+					<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> Sistema de "Trenes en Vivo" | Estación Belgrano C. | Foto de enelsubte.com  </figcaption>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<section style="padding-top: 40px;">
+		<div class="container-fluid">
+			<h2>Introducción y aclaraciones</h2>
+			<p>Ante nada, aclaro que esta documentación NO ES OFICIAL, es un rejunte de todo el funcionamiento que logré interpretar hasta el día de hoy. </p>
+			<p>La documentación va a comprender pocos aspectos pero escenciales que te van a ayudar a obtener datos específicos, como los minutos restantes, el destino y las paradas intermedias, número de servicio y formación, pero nada más allá de eso, ya que el resto de los datos están disponibles con otras key de acceso y son diferentes a las públicas. </p>
+			<hr>
+			<h2>¿Dónde encuentro los links, keys y demás?</h2>
+			<p>Los encontrás en la sección <a href="#/APIs/trenesenvivo/vars">Variables</a>.</p>
+			<hr>
+			<h2>Primeros tropiezos más que pasos...</h2>
+			<div class="alert alert-danger">
+				<strong>Update 26/09/2016 - Atención: </strong>
+				<p>El método de parsing por PHP no funcionará por el bloqueo realizado desde el framework de Codeigniter proveniente de SOFSE. </p>
+				<p>Mandame un mensaje privado por Twitter o por el feedback para pasarte un método de parseo probablemente efectivo, aunque requerirá que tengas un recurso propio contratado... no puedo ni decirlo por acá porque los dos probables responsables del bloqueo están vigilando que no publique ni acceda a los servidores de la API. </p>
+				<p>Desde el vamos, si querían que la API fuera privada lo hubieran ocultado mejor, aparte, esto no hace que choque un tren o cambie un itinerario de salida, es solo un mísero get de datos, no tengo CRUD completo, y si no quieren que sobrecargue el servidor, compren otro y punto. </p>
+				<p>De hecho, esta API tiene que ser pública así no estamos obligados a usar una app con una estética horrible y sin optimización de datos móviles (de hecho, aprendan de <a href="http://github.com/Fermoto5HD/proximo-tren">"Próximo Tren"</a>, que lo armé todo de cero y sólo usa esa API para mostrar bien los datos). </p>
+				<p>-Fermoto5HD </p>
+			</div>
+			<p>Para continuar vas a tener que utilizar PHP para realizar un bypass de conexión con los diferentes PHP de Trenes en Vivo. </p>
+			<p>¿Por qué? Esto es debido a una restricción de los CORS (Cross-origin Resource Sharing, traducido: "Recursos Compartidos de Origen Cruzado", y esto evita poder tener interacción directa con los PHP. Es por eso que vamos a hacer un bypass mediante PHP. </p>
+			<p>De todas formas es una solución a medias, ya que, para evitar los "incorrect key" erróneos que aparecerán en medio de las consultas, habrá que cargar estos PHP bypass en un VPS o Servidor Virtual Privado. </p>
+			<hr>
+			<h2>Creando el PHP Bypass</h2>
+			<p>Comencemos con esto:</p>
+			<pre>&lt;?php
+$ramal = 		$_GET['ramal'];
+$anden = 		$_GET['anden'];
+$cartel = 		0;
+$key = 			"NRVQjcjTUF0I30EVFBDTqdWp%23"; 
+$url = 			'http://trenes.sofse.gob.ar/v2_pg/lcd_public/ajax_arribos_andenes.php'; 
+
+$content = $url.'?ramal='.$ramal.'&anden='.$anden.'&cartel='.$cartel.'&rnd=&key='.$key;
+header("Access-Control-Allow-Origin: *");
+
+// Con esto se generará la información necesaria a utilizar. 
+$contenido = file_get_contents($content);
+echo $contenido; 
+?&gt;</pre>
+			<p>Acá va a realizar toda la magia necesaria para lograr conectarte con el servidor. </p>
+			<h3>Identificadores de estación, ramal, etc.</h3>
+			<p>En este ejemplo los valores de identificación se realizan mediante GET (o dicho en criollo, por barra de direcciones), tanto para el ramal como para el anden, como para los valores que se requieran mencionarlos por URL. </p>
+			<h3>Key</h3>
+			<p>Para hacer los requests o pedidos de datos será necesario contar con una key. Generalmente son utilizadas en forma pública en las pantallas públicas de las estaciones. </p>
+			<h3>Url</h3>
+			<p>Esta URL es la dirección base para hacer los pedidos. Usualmente es <code>trenes.sofse.gob.ar</code>, junto con el directorio <code>/v2_pg</code> que es heredado del sistema creado en la gestión del Ministerio del Interior y Transporte.</p>
+			<p>Los archivos de datos están dispersos en varias carpetas, y hasta el momento se conocen 4 o 5 fuentes de datos dinámicos, entre ellos están <code>/v2_pg/lcd_public</code> y <code>/v2_pg/pantalla_led</code> que son los más conocidos. </p>
+			<br>
+			<p>Una vez creado el parser, tendrás que utilizar Javascript o PHP para utilizar los datos por separado. En este ejemplo vamos a utilizar Javascript. </p>
+			<hr>
+			<h2>Obteniendo los datos del parser</h2>
+			<p>Para esto habrá que tener un buen dominio de Javascript y nociones básicas de JSON ya que habrá que navegar por el resultado de la consulta de PHP que hicimos con el PHP Bypass, el cual nos dió varios objetos y vectores. </p>
+			<p>Estas son las estructuras que entrega el parser: </p>
+			<pre>{
+	"items": {
+		"reload": "0",
+		"demora_formacion_1": "0",
+		"demora_formacion_2": "17",
+		"demora_formacion_3": "34",
+		"estacion_hasta_1": "CABRED",
+		"formacion_tipo_servicio_1": "N",
+		"estaciones_1": "-",
+		"formacion_tipo_servicio_2": "N",
+		"estaciones_2": "-",
+		"formacion_tipo_servicio_3": "E",
+		"estaciones_3": "RETIRO - PALERMO - CHACARITA - LA PATERNAL - VILLA DEL PARQUE - DEVOTO - SAENZ PE&Ntilde;A - SANTOS LUGARES - CASEROS - EL PALOMAR - HURLINGHAM - W.C. MORRIS - BELLA VISTA - MU&Ntilde;IZ - SAN MIGUEL - JOSE C. PAZ ",
+		"alerta": {
+			"estado_i": 0,
+			"estado_v": 0,
+			"mensaje": "",
+			"sentido": "1"
+		}
+	},
+	"video": {
+		"mostrar": 0,
+		"nombre": "file:///video/video01.mp4",
+		"duracion": "31000",
+		"intervalo": "500000"
+	}
+}</pre>
+			<hr>
+			<div class="text-xs-center">
+				<h2>¿Estás listo?</h2>
+				<p>Entonces continuemos con el uso de los métodos y variables.</p>
+				<a class="btn btn-primary" href="#/APIs/{{api}}/vars">Ver variables</a>
+			</div>
+		</div>
+	</section>
+</div>

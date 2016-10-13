@@ -1,28 +1,63 @@
 <section class="jumbotron-container" style="background-image: url(img/jumbotron/TrenDelValle.jpg)">
+	<video id="video-background" preload muted autoplay loop>
+		<source src="vid/home.min.mp4" type="video/mp4">
+		<source src="vid/home.min.ogg" type="video/ogg">
+	</video>
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<h1>El ferrocarril avanza, los datos también.</h1>
-			<p>Ahora el proyecto abarcará más aspectos, por lo tanto el proyecto pasó de ser "Flota Ferroviaria" a ser "Ferrocarriles Abiertos", un proyecto que ya tenía en mente realizarlo pero que no sabía cómo comenzarlo. </p>
-			<p>Los relevamientos de flota por línea están disponibles dentro de la sección "Flota Ferroviaria". </p>
-			<p>¡Disfrutalo!</p>
-			<div class="alert alert-warning">
-				<strong>Aviso:</strong>
-				<p>Este proyecto está en desarrollo, hay partes que no quedaron totalmente terminadas. </p>
-				<p>Si encontrás errores por favor contactate conmigo y brindame un feedback de lo que encuentres. </p>
-				<p>¡Gracias! ;)</p>
-			</div>
-			<!--<h1>Flota Ferroviaria</h1>
-			<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
-			<p>Estos datos fueron relevados parcialmente por mí, tanto en persona como por los datos de varios videos en YouTube e información en Facebook y páginas de Internet (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>-->
+			<p>Ferrocarriles Abiertos es una base de datos abiertos sobre los ferrocarriles argentinos, pretendemos albergar la mayor cantidad de información relacionado a la materia ferroviaria para que cualquier persona pueda hacer un seguimiento de determinados sucesos o utilizar estos datos para enriquecer trabajos e informes. </p>
+			<p>También podrás cooperar con el proyecto, en la sección "Acerca de" tenés los links para avisar de algún cambio o agregar información en los datasets, por supuesto se dan los créditos a quienes van aportando información. </p>
+			<p>Bienvenido a Ferrocarriles Abiertos, ¡Disfrutalo!</p>
 		</div>
 	</div>
-	<div class="breadcrumb-container" id="jumbotron-caption">
+	<div class="breadcrumb-container hidden-lg-up" id="jumbotron-caption">
 		<div class="container-fluid">
 			<div class="breadcrumb">
 				<i class="fa fa-picture-o" aria-hidden="true"></i> Tren del Valle Neuquén-Cipolletti | Foto de SOFSE</div>
 			</div>
 		</div>
 	</div>
+	<style type="text/css">
+		#video-background{ 
+			display: none; 
+		}
+		@media(min-width: 992px){
+			.jumbotron-container{
+				position: relative;
+				overflow: hidden;
+
+				/* Tried setting the height. Didnt work either */
+				/* height: 200px; */
+			}
+			.jumbotron {
+				position: relative;
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 1;
+			}
+			.jumbotron .container-fluid {
+				position: relative;
+				color: #ffffff;
+				z-index: 2;
+				padding-top: 25px; 
+				padding-bottom: 25px; 
+			}
+
+			#video-background{ 
+				position: absolute;
+				display: block; 
+				height: auto;
+				width: auto;
+				min-height: 100%;
+				min-width: 100%;
+				left: 50%;
+				top: 50%;
+				-webkit-transform: translate3d(-50%, -50%, 0);
+				transform: translate3d(-50%, -50%, 0);
+				z-index: 1;
+			}
+		}
+	</style>
 </section>
 <section>
 	<br>
@@ -44,20 +79,20 @@
 			<div class="col-sm-6 col-md-4">
 				<div class="card">
 					<div class="card-header">
-						<h2>Flota Ferroviaria</h2>
+						<h2>Flota de material rodante</h2>
 					</div>
 					<div class="card-block">
-						<p>Datos de las formaciones, desde la composición hasta el estado funcional e integral de la misma.</p>
+						<p>Datos de las formaciones, desde la composición, pasando por los Id de los coches hasta el estado funcional e integral de la misma. </p>
 					</div>
 					<div class="card-footer">
-						<a href="#/flota-ferroviaria" class="btn btn-primary">Ver datasets</a>
+						<a href="#/flota" class="btn btn-primary">Ver datasets</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-4">
 				<div class="card">
 					<div class="card-header">
-						<h2>Esquemas</h2>
+						<h2>Esquemas de material rodante</h2>
 					</div>
 					<div class="card-block">
 						<p>Imágenes y descripciones de los diferentes esquemas ferroviarios en Argentina.</p>
@@ -67,7 +102,20 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-6">
+			<div class="col-sm-6 col-md-4">
+				<div class="card">
+					<div class="card-header">
+						<h2>Marcas corporativas</h2>
+					</div>
+					<div class="card-block">
+						<p>Marcas utilizadas por las diversas líneas ferroviarias.</p>
+					</div>
+					<div class="card-footer">
+						<a href="#/marcas" class="btn btn-danger disabled">No disponible</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
 				<div class="card">
 					<div class="card-header">
 						<h2>Glosario</h2>
@@ -80,7 +128,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6 col-md-6">
+			<div class="col-sm-6 col-md-4">
 				<div class="card">
 					<div class="card-header">
 						<h2>APIs</h2>

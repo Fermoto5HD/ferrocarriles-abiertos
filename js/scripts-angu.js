@@ -32,20 +32,32 @@ app
 			templateUrl:'views/home.html',
 			controller: 'mainctrl'
 		})
+		.when('/flota-ferroviaria',{ 
+			redirectTo: '/flota/'
+		})
+		.when('/flota-ferroviaria/linea',{ 
+			redirectTo: '/flota/'
+		})
+		.when('/flota-ferroviaria/linea/:line',{  
+			redirectTo: '/flota/linea/:line'
+		})
 		.when('/acerca-de',{ 
 			templateUrl:'views/about.html'
+		})
+		.when('/marcas',{ 
+			templateUrl:'views/brands/main.html'
 		})
 		.when('/glosario',{ 
 			templateUrl:'views/glossary.html'
 		})
 		// Flota Ferroviaria
-		.when('/flota-ferroviaria',{ 
+		.when('/flota',{ 
 			templateUrl:'views/gathered-trains/main.html'
 		})
-		.when('/flota-ferroviaria/linea',{ 
-			redirectTo: '/flota-ferroviaria/'
+		.when('/flota/linea',{ 
+			redirectTo: '/flota/'
 		})
-		.when('/flota-ferroviaria/linea/:line',{ 
+		.when('/flota/linea/:line',{ 
 			templateUrl:'views/gathered-trains/line.html',
 			controller: 'gathered_line'
 		})
@@ -72,7 +84,8 @@ app
 			controller: 'api'
 		})
 		.when('/APIs/:api/vars',{ 
-			templateUrl:'views/APIs/vars.html'
+			templateUrl:'views/APIs/vars.html',
+			controller: 'api'
 		})
 
 		// Algunos redirects 

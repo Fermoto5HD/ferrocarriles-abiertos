@@ -13,7 +13,8 @@
 		"livesheet": "#", 
 		"downloads": [
 			{"year": 2016, "month": "Junio", "file": "lineaA-Junio2016.csv"}, 
-			{"year": 2016, "month": "Julio", "file": "lineaA.csv"}
+			{"year": 2016, "month": "Julio", "file": "lineaA-Julio2016.csv"}, 
+			{"year": 2016, "month": "Septiembre", "file": "lineaA.csv"}
 		], 
 		"cover": false
 	}, 

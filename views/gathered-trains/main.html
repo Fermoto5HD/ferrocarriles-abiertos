@@ -1,26 +1,80 @@
 <section class="jumbotron-container" style="background-image: url(img/jumbotron/flota-ferroviaria.jpg)">
+	<video id="video-background" preload muted autoplay loop>
+		<source src="vid/flota.min.mp4" type="video/mp4">
+		<source src="vid/flota.min.ogg" type="video/ogg">
+	</video>
 	<div class="breadcrumb-container">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
-				<li><a href="#/">Ferrocarriles Abiertos</a></li>
-				<li class="active">Flota Ferroviaria</li>
+				<li class="breadcrumb-item"><a href="#/">Ferrocarriles Abiertos</a></li>
+				<li class="breadcrumb-item active">Flota Ferroviaria</li>
 			</ol>
 		</div>
 	</div>
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<h1>Flota Ferroviaria</h1>
-			<p>¡Bienvenido! Acá podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
-			<p>Estos datos fueron relevados parcialmente por mí, tanto en persona como por los datos de varios videos en YouTube e información en Facebook y páginas de Internet (los cuales ya les doy las gracias), y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>
+			<p>En esta sección podrás conocer las composiciones de la flota actual de cada línea ferroviaria en Buenos Aires. </p>
+			<p>Estos datos fueron relevados parcialmente tanto en persona como por los datos de varios videos en YouTube e información en Facebook y páginas de Internet, y están disponibles para el uso libre para cualquier actividad, sea investigación, como de estadística o para lo que fuere. </p>
 		</div>
 	</div>
-	<div class="breadcrumb-container" id="jumbotron-caption">
+	<div class="breadcrumb-container hidden-lg-up" id="jumbotron-caption">
 		<div class="container-fluid">
 			<div class="breadcrumb">
 				<i class="fa fa-picture-o" aria-hidden="true"></i> Línea Sarmiento | Zona, fecha y autores desconocidos.</div>
 			</div>
 		</div>
 	</div>
+	<style type="text/css">
+		#video-background{ 
+			display: none; 
+		}
+		.breadcrumb-container {
+			padding-top: 68px; 
+		}
+		.breadcrumb-container#jumbotron-caption {
+			padding-top: 0px; 
+		}
+		@media(min-width: 992px){
+			.jumbotron-container{
+				position: relative;
+				overflow: hidden;
+
+				/* Tried setting the height. Didnt work either */
+				/* height: 200px; */
+			}
+			.breadcrumb-container, 
+			.jumbotron {
+				position: relative;
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 1;
+			}
+			.breadcrumb-container {
+				background-color: rgba(0, 0, 0, 0.75); 
+			}
+			.jumbotron .container-fluid {
+				position: relative;
+				color: #ffffff;
+				z-index: 2;
+				padding-top: 0px; 
+				padding-bottom: 25px; 
+			}
+
+			#video-background{ 
+				position: absolute;
+				display: block; 
+				height: auto;
+				width: auto;
+				min-height: 100%;
+				min-width: 100%;
+				left: 50%;
+				top: 50%;
+				-webkit-transform: translate3d(-50%, -50%, 0);
+				transform: translate3d(-50%, -50%, 0);
+				z-index: 1;
+			}
+		}
+	</style>
 </section>
 <section>
 	<br>
@@ -37,8 +91,8 @@
 						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a ng-if="line.available && line.provisory === false" href="#/flota-ferroviaria/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
-						<a ng-if="line.available && line.provisory" href="#/flota-ferroviaria/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
+						<a ng-if="line.available && line.provisory === false" href="#/flota/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory" href="#/flota/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
 						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
@@ -57,8 +111,8 @@
 						<p>{{line.homedescription}} </p>
 					</div>
 					<div class="card-footer">
-						<a ng-if="line.available && line.provisory === false" href="#/flota-ferroviaria/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
-						<a ng-if="line.available && line.provisory" href="#/flota-ferroviaria/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
+						<a ng-if="line.available && line.provisory === false" href="#/flota/linea/{{line.line}}" class="btn btn-primary">Ver flota actual</a>
+						<a ng-if="line.available && line.provisory" href="#/flota/linea/{{line.line}}" class="btn btn-warning">Ver flota provisoria</a>
 						<a ng-if="line.available === false" nohref class="btn btn-danger disabled">No disponible</a>
 					</div>
 				</div>
